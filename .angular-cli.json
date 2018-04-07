@@ -6,6 +6,11 @@
   "apps": [
     {
       "root": "src",
+      "stylePreprocessorOptions": {
+        "includePaths": [
+          "assets/scss/utils"
+        ]
+      },
       "outDir": "dist",
       "assets": [
         "assets",
