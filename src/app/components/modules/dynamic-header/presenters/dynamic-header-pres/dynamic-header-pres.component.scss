@@ -1,0 +1,15 @@
+@import 'utils';
+
+.video-container {
+  display: flex;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+}
+
+.video-bg {
+  height: calc(100vh - #{$video-overflow-visible-y});
+  object-fit: cover;
+  width: 100vw;
+  z-index: -1;
+}

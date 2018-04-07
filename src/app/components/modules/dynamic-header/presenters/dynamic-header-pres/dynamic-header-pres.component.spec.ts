@@ -9,8 +9,7 @@ describe('DynamicHeaderPresComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ DynamicHeaderPresComponent ]
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

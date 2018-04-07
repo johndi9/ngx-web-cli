@@ -1,3 +1,9 @@
-<p>
-  dynamic-header-pres works!
-</p>
+<div class="video-container">
+  <app-logo-pres></app-logo-pres>
+
+  <picture class="video-bg fade-slide-in delay150">
+    <source type="video/mp4" [srcset]="videoPath">
+    <source type="image/webp" [srcset]="videoPath">
+    <img src="cats.gif">
+  </picture>
+</div>
