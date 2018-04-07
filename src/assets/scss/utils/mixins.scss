@@ -1,0 +1,196 @@
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@mixin card-grid {
+  .padding-column {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @media ($mat-xsmall-down) {
+      padding: 0;
+    }
+  }
+
+  .padding-card {
+    padding-bottom: 20px;
+  }
+
+  .card {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%; // Don't let them exceed the column width
+  }
+}
+
+@mixin loading-modules {
+  .module {
+    background: $white;
+    padding: 10px;
+  }
+
+  .separation {
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .line-wrapper {
+    padding-left: 20px;
+  }
+
+  .line {
+    background: $gray-lighter;
+    display: block;
+    height: 10px;
+    margin: 10px 0;
+  }
+
+  .logo {
+    @include mat-elevation(2);
+    background: $gray-lighter;
+    border-radius: rem(5);
+    height: $logo-size;
+    width: $logo-size;
+  }
+}
+
+@mixin sub-heading-styles {
+  .sub-heading-styles {
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+}
+
+@mixin shared-common-styles {
+  .block {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .sub-block {
+    margin-bottom: rem(10);
+  }
+
+  .highlight {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+}
+
+@mixin card-vertical-icon {
+  .mat-icon {
+    font-size: rem(20);
+    vertical-align: middle;
+  }
+}
+
+@mixin expand-card-section {
+  margin-left: -16px;
+  margin-right: -16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@mixin expand-dialog-section {
+  margin-left: -24px;
+  margin-right: -24px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@mixin dialog-structure {
+  .dialog-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .dialog-header {
+    border-bottom: 1px solid $gray-lighter;
+    padding: 24px;
+  }
+
+  .dialog-subtitle {
+    @include expand-dialog-section;
+    border-bottom: 1px solid $gray-lighter;
+    padding-bottom: 20px;
+  }
+
+  .dialog-body {
+    flex: 1;
+    padding: 0 24px;
+    overflow-y: auto;
+  }
+
+  .block {
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  ul {
+    padding-left: 2rem;
+  }
+
+  .mat-icon-button {
+    text-align: right;
+
+    .mat-icon {
+      font-size: 2.2rem;
+      height: auto;
+      width: auto;
+    }
+  }
+}
+
+@mixin skills-structure {
+  .chip-wrapper {
+    padding: 0 20px;
+  }
+
+  .skill-title {
+    margin-bottom: 1.4rem;
+    width: 100%;
+
+    .mat-icon {
+      @extend %list-icon-style;
+    }
+
+    .mat-icon,
+    span {
+      vertical-align: middle;
+    }
+  }
+
+  .skill-container {
+    margin-bottom: 1.8rem;
+    width: 100%;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@mixin shadow-default {
+  box-shadow: 10px 0 14px 0 $black-02;
+}
