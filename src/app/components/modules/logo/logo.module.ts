@@ -6,6 +6,7 @@ import { LogoPresComponent } from './presenters/logo-pres/logo-pres.component';
   imports: [
     CommonModule
   ],
-  declarations: [ LogoPresComponent ]
+  declarations: [ LogoPresComponent ],
+  exports: [ LogoPresComponent ]
 })
 export class LogoModule {}
