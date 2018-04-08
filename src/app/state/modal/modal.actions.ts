@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { ModalActionTypes } from '../../enum/modal-action-types.enum';
+import { ModalActionTypes } from '../../enum/state/modal-action-types.enum';
 
 export class OpenModal implements Action {
   readonly type = ModalActionTypes.OPEN_MODAL;

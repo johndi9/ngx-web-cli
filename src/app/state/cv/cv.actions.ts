@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 import { CurriculumInt } from '../../interfaces/cv/curriculum.int';
-import { CurriculumActionTypes } from '../../enum/cv-action-types.enum';
+import { CurriculumActionTypes } from '../../enum/state/cv-action-types.enum';
 
 export class LoadCV implements Action {
   readonly type = CurriculumActionTypes.LOAD_CV;

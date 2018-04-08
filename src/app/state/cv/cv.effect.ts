@@ -3,7 +3,7 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { switchMap } from 'rxjs/operators';
-import { CurriculumActionTypes } from '../../enum/cv-action-types.enum';
+import { CurriculumActionTypes } from '../../enum/state/cv-action-types.enum';
 import { CurriculumInt } from '../../interfaces/cv/curriculum.int';
 import { LoadCV, LoadCVFail, LoadCVSuccess } from './cv.actions';
 

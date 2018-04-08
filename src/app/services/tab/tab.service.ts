@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import { TAB_OPTIONS } from '../../enum/tab-options.enum';
+import { TAB_OPTIONS } from '../../enum/tab/tab-options.enum';
 import { SelectionInt } from '../../interfaces/selection/selection.int';
 import { State } from '../../state';
 import { SelectTab } from '../../state/tab/tab.actions';

@@ -1,5 +1,5 @@
-import { CurriculumActionTypes } from '../../enum/cv-action-types.enum';
-import { LoadState } from '../../enum/loading-state.enum';
+import { CurriculumActionTypes } from '../../enum/state/cv-action-types.enum';
+import { LoadState } from '../../enum/state/loading-state.enum';
 import { CurriculumInt } from '../../interfaces/cv/curriculum.int';
 import { XhrStateInt } from '../../interfaces/xhr-state/xhr-state.int';
 import { CvActions } from './cv.actions';

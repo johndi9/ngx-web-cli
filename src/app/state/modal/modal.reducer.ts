@@ -1,4 +1,4 @@
-import { ModalActionTypes } from '../../enum/modal-action-types.enum';
+import { ModalActionTypes } from '../../enum/state/modal-action-types.enum';
 import { SelectionInt } from '../../interfaces/selection/selection.int';
 import { ModalActions } from './modal.actions';
 

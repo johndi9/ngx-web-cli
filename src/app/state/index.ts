@@ -1,5 +1,5 @@
 import { ActionReducerMap } from '@ngrx/store';
-import { TAB_OPTIONS } from '../enum/tab-options.enum';
+import { TAB_OPTIONS } from '../enum/tab/tab-options.enum';
 import { CurriculumInt } from '../interfaces/cv/curriculum.int';
 import { SelectionInt } from '../interfaces/selection/selection.int';
 import { XhrStateInt } from '../interfaces/xhr-state/xhr-state.int';
