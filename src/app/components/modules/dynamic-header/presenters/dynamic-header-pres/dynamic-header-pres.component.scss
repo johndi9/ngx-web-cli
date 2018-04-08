@@ -1,14 +1,28 @@
 @import 'utils';
 
-.video-container {
+.dynamic-header-container {
   display: flex;
   overflow: hidden;
   position: fixed;
   top: 0;
 }
 
+.video-wrapper {
+  position: relative;
+
+  &:after {
+    background: linear-gradient(transparent, $white);
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
 .video-bg {
-  height: calc(100vh - #{$video-overflow-visible-y});
+  height: 50vh;
   object-fit: cover;
   width: 100vw;
   z-index: -1;
