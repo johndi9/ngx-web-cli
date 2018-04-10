@@ -1,4 +1,4 @@
 export enum ImageEnum {
-  LARGE,
-  THUMBNAIL,
+  LARGE = 'large',
+  THUMBNAIL = 'thumbnail',
 }

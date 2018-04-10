@@ -1,11 +1,13 @@
-import { ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import {path} from 'ramda';
 import { ImageEnum } from '../../../enum/image/image.enum';
 import { ImageInt } from '../../../interfaces/image/image.int';
 
 @Component({
   selector: 'app-image',
   templateUrl: './image.component.html',
-  styleUrls: [ './image.component.scss' ]
+  styleUrls: [ './image.component.scss' ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ImageComponent implements OnInit, OnChanges {
   @Input() image: ImageInt;
@@ -22,7 +24,7 @@ export class ImageComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes[ 'image' ] && changes[ 'image' ].previousValue !== changes[ 'image' ].currentValue) {
+    if (path([ 'image', 'previousValue', 'src', 'large' ], changes) !== path([ 'image', 'currentValue', 'src', 'large' ], changes)) {
       const imageObj = this.image || this.getDefaultNoImage(this.errorImage);
       this.initLoad(imageObj);
     }
