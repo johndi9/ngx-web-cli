@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { CvSliderContComponent } from './containers/cv-slider-cont/cv-slider-cont.component';
 import { CvSliderPresComponent } from './presenters/cv-slider-pres/cv-slider-pres.component';
 
@@ -7,6 +7,7 @@ import { CvSliderPresComponent } from './presenters/cv-slider-pres/cv-slider-pre
   imports: [
     CommonModule
   ],
-  declarations: [CvSliderContComponent, CvSliderPresComponent]
+  declarations: [ CvSliderContComponent, CvSliderPresComponent ],
+  exports: [ CvSliderContComponent ]
 })
-export class CvSliderModule { }
+export class CvSliderModule {}
