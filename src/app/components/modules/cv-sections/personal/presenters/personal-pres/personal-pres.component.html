@@ -1,3 +1,50 @@
-<p>
-  personal-pres works!
-</p>
+<div class="block">
+  <h2 class="sub-heading-styles">{{ 'labels.personalInfoTitle' | translate }}</h2>
+
+  <blockquote>
+    <div>{{ info?.label }}</div>
+    <div>{{ info?.brief }}</div>
+  </blockquote>
+</div>
+
+<div class="block">
+  <h3>{{ 'labels.aboutMe' | translate }}</h3>
+
+  <ul>
+    <li *ngFor="let phrase of aboutMe">
+      {{ phrase }}
+    </li>
+  </ul>
+</div>
+
+<div class="block">
+  <h3>{{ 'labels.skills' | translate }}</h3>
+
+  <div class="chip-wrapper">
+    <mat-chip-list>
+      <ng-template ngFor let-skillSet [ngForOf]="skillSets" let-i="index">
+        <h4 class="skill-title">
+          <mat-icon>{{ skillSet.icon }}</mat-icon>
+          <span>{{ skillSet.name }}</span>
+        </h4>
+
+        <div class="skill-container">
+          <mat-chip *ngFor="let skill of skillSet.skills">
+            {{ skill }}
+          </mat-chip>
+        </div>
+      </ng-template>
+    </mat-chip-list>
+  </div>
+</div>
+
+<div class="block">
+  <h3>{{ 'labels.interests' | translate }}</h3>
+
+  <ul class="interest-list">
+    <li *ngFor="let interest of interests">
+      <mat-icon>{{ interest.icon }}</mat-icon>
+      <span>{{ interest.name }}</span>
+    </li>
+  </ul>
+</div>
