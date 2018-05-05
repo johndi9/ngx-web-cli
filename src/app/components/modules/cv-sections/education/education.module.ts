@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { EducationContComponent } from './containers/education-cont/education-cont.component';
 import { EducationPresComponent } from './presenters/education-pres/education-pres.component';
 
@@ -7,6 +7,7 @@ import { EducationPresComponent } from './presenters/education-pres/education-pr
   imports: [
     CommonModule
   ],
-  declarations: [EducationContComponent, EducationPresComponent]
+  declarations: [ EducationContComponent, EducationPresComponent ],
+  exports: [ EducationContComponent ]
 })
-export class EducationModule { }
+export class EducationModule {}

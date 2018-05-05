@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { ProjectsContComponent } from './containers/projects-cont/projects-cont.component';
 import { ProjectsPresComponent } from './presenters/projects-pres/projects-pres.component';
 
@@ -7,6 +7,7 @@ import { ProjectsPresComponent } from './presenters/projects-pres/projects-pres.
   imports: [
     CommonModule
   ],
-  declarations: [ProjectsContComponent, ProjectsPresComponent]
+  declarations: [ ProjectsContComponent, ProjectsPresComponent ],
+  exports: [ ProjectsContComponent ]
 })
-export class ProjectsModule { }
+export class ProjectsModule {}
