@@ -1,14 +1,15 @@
 @import 'utils';
 
 $profile-pic-size: rem(90) !default;
-$profile-pic-overflow-y: -45px !default;
-$sidebar-container-overflow-y: -50px !default;
+$profile-pic-overflow-y: 45px !default;
+$sidebar-container-overflow-y: 50px !default;
 
 .sidebar-container {
   @include mat-elevation(6);
   background: $white;
-  margin-top: $sidebar-container-overflow-y;
+  margin-top: -$sidebar-container-overflow-y;
   position: sticky;
+  top: $sidebar-container-overflow-y;
 
   .mat-list-item {
     color: $color-base;
@@ -20,7 +21,7 @@ $sidebar-container-overflow-y: -50px !default;
       border-radius: 5px;
       height: $profile-pic-size;
       margin-left: calc(50% - #{$profile-pic-size} / 2);
-      margin-top: $profile-pic-overflow-y;
+      margin-top: -$profile-pic-overflow-y;
       width: $profile-pic-size;
     }
   }
