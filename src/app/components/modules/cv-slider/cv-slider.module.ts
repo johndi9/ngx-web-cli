@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { SWIPER_CONFIG, SwiperConfigInterface, SwiperModule } from 'ngx-swiper-wrapper';
+import { CvModule } from '../../../services/cv/cv.module';
 import { ContactModule } from '../cv-sections/contact/contact.module';
 import { EducationModule } from '../cv-sections/education/education.module';
 import { EmployersModule } from '../cv-sections/employers/employers.module';
@@ -19,6 +20,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   imports: [
     CommonModule,
     SwiperModule,
+    CvModule,
     // CV Sections - Check if they can be lazy load
     PersonalModule,
     ProjectsModule,

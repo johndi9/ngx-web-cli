@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { EmployInt } from '../../../../../../interfaces/cv/employ/employ.int';
+import { ProjectInt } from '../../../../../../interfaces/cv/project/project.int';
 
 @Component({
   selector: 'app-projects-cont',
   templateUrl: './projects-cont.component.html',
-  styleUrls: ['./projects-cont.component.scss']
+  styleUrls: [ './projects-cont.component.scss' ]
 })
-export class ProjectsContComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class ProjectsContComponent {
+  @Input() projects: ProjectInt[];
+  @Input() employs: EmployInt[];
 }

@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CvModule } from '../../../services/cv/cv.module';
 import { ModalModule } from '../../../services/modal/modal.module';
 import { TabModule } from '../../../services/tab/tab.module';
 import { CvSliderModule } from '../../modules/cv-slider/cv-slider.module';
@@ -14,7 +13,6 @@ import { ROUTES } from './home.routes';
   imports: [
     CommonModule,
     RouterModule.forChild(ROUTES),
-    CvModule,
     TabModule,
     ModalModule,
     DynamicHeaderModule,

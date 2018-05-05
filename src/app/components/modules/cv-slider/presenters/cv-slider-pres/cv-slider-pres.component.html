@@ -1,10 +1,26 @@
 <div class="cv-slider-wrapper">
   <swiper class="swiper-container fade-slide-in delay350">
-    <div class="swiper-slide"><app-personal-cont></app-personal-cont></div>
-    <div class="swiper-slide"><app-projects-cont></app-projects-cont></div>
-    <div class="swiper-slide"><app-employers-cont></app-employers-cont></div>
-    <div class="swiper-slide"><app-education-cont></app-education-cont></div>
-    <div class="swiper-slide"><app-other-info-cont></app-other-info-cont></div>
-    <div class="swiper-slide"><app-contact-cont></app-contact-cont></div>
+    <div class="swiper-slide">
+      <app-personal-cont [info]="cv?.content?.info" [skillSets]="cv?.content?.skills?.sets"
+                         [interests]="cv?.content?.interests" [aboutMe]="cv?.content?.aboutMe"></app-personal-cont>
+    </div>
+    <div class="swiper-slide">
+      <app-projects-cont [projects]="cv?.content?.projects"
+                         [employs]="cv?.content?.employment?.history"></app-projects-cont>
+    </div>
+    <div class="swiper-slide">
+      <app-employers-cont [employs]="cv?.content?.employment?.history"></app-employers-cont>
+    </div>
+    <div class="swiper-slide">
+      <app-education-cont [educations]="cv?.content?.education?.history" [certificates]="cv?.content?.certificates"
+                          [seminars]="cv?.content?.seminars" [languages]="cv?.content?.languages"></app-education-cont>
+    </div>
+    <div class="swiper-slide">
+      <app-other-info-cont [writings]="cv?.content?.writing" [speakings]="cv?.content?.speaking"></app-other-info-cont>
+    </div>
+    <div class="swiper-slide">
+      <app-contact-cont [contact]="cv?.content?.contact" [location]="cv?.content?.location"
+                        [social]="cv?.content?.social"></app-contact-cont>
+    </div>
   </swiper>
 </div>

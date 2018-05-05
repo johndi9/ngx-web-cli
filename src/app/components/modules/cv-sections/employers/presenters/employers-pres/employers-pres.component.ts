@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { EmployInt } from '../../../../../../interfaces/cv/employ/employ.int';
 
 @Component({
   selector: 'app-employers-pres',
   templateUrl: './employers-pres.component.html',
-  styleUrls: ['./employers-pres.component.scss']
+  styleUrls: [ './employers-pres.component.scss' ]
 })
-export class EmployersPresComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class EmployersPresComponent {
+  @Input() employs: EmployInt[];
 }
