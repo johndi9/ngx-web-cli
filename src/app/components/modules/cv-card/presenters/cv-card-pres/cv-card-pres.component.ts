@@ -7,6 +7,7 @@ import { getImage } from '../../../../../helpers/image.helper';
   styleUrls: [ './cv-card-pres.component.scss' ]
 })
 export class CvCardPresComponent {
+  @Input() id: number;
   @Input() title: string;
   @Input() thumbImg: string;
 

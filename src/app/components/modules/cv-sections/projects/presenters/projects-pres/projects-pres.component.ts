@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { getEmployerFromProject } from '../../../../../../helpers/project.helper';
 import { EmployInt } from '../../../../../../interfaces/cv/employ/employ.int';
 import { ProjectInt } from '../../../../../../interfaces/cv/project/project.int';
 
@@ -10,4 +11,6 @@ import { ProjectInt } from '../../../../../../interfaces/cv/project/project.int'
 export class ProjectsPresComponent {
   @Input() projects: ProjectInt[];
   @Input() employs: EmployInt[];
+
+  getEmployerFromProject = getEmployerFromProject;
 }

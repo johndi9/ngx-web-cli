@@ -1,3 +1,20 @@
-<p>
-  projects-pres works!
-</p>
+<ng-template ngFor let-project [ngForOf]="projects" let-i="index">
+  <app-cv-card-pres class="card" [id]="project?.id" [title]="project?.title" [thumbImg]="project?.logo">
+    <div class="card-recap">
+      <ng-template let-emp [ngTemplateOutletContext]="{ $implicit: getEmployerFromProject(employs, project?.employerId) }"
+                   [ngTemplateOutlet]="t" #t>
+        <div class="card-location"><mat-icon>place</mat-icon><span>{{ emp?.location }}</span></div>
+        <div class="card-employer"><mat-icon>business</mat-icon><span>{{ emp?.employer }}</span></div>
+      </ng-template>
+      <div class="card-date-range"><mat-icon>date_range</mat-icon><span></span></div>
+    </div>
+    <div class="card-description">{{ project?.summary }}</div>
+    <div class="card-actions">
+      <button md-raised-button color="primary">{{ 'labels.moreDetails' | translate }}</button>
+      <a *ngIf="project?.url" md-raised-button href="{{ project?.url }}" target="_blank"
+         (click)="$event.stopPropagation()">{{ 'labels.url' | translate }}</a>
+      <a *ngIf="project?.download" md-raised-button href="{{ '/assets/pdf/' + project?.download }}" download
+         (click)="$event.stopPropagation()"><mat-icon>file_download</mat-icon>{{ 'labels.download' | translate }}</a>
+    </div>
+  </app-cv-card-pres>
+</ng-template>

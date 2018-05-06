@@ -1,3 +1,5 @@
+@import 'utils';
+
 $mat-card-header-size: auto !default;
 $mat-card-header-title-font-size: 1.3rem !default;
 $logo-avatar-size: 50px !default;
@@ -29,6 +31,15 @@ $logo-avatar-size: 50px !default;
       line-height: 1.5rem;
     }
   }
+
+  ::ng-deep {
+    .card-pic {
+      @include mat-elevation(2);
+      border-radius: rem(5);
+      height: $logo-avatar-size;
+      width: $logo-avatar-size;
+    }
+  }
 }
 
 .mat-card-header {
@@ -48,13 +59,6 @@ $logo-avatar-size: 50px !default;
     height: $mat-card-header-size;
     width: 100%;
   }
-}
-
-.mat-card-avatar {
-  @include mat-elevation(2);
-  border-radius: rem(5);
-  height: $logo-avatar-size;
-  width: $logo-avatar-size;
 }
 
 .no-logo-icon {
