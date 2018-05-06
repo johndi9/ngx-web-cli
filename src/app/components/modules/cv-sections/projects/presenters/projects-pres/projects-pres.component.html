@@ -1,4 +1,6 @@
-<ng-template ngFor let-project [ngForOf]="projects" let-i="index">
+<app-cv-card-grid-pres [items]="projects" [cardTemplate]="cardTemplate"></app-cv-card-grid-pres>
+
+<ng-template #cardTemplate let-project>
   <app-cv-card-pres class="card" [id]="project?.id" [title]="project?.title" [thumbImg]="project?.logo">
     <div class="card-recap">
       <ng-template let-emp [ngTemplateOutletContext]="{ $implicit: getEmployerFromProject(employs, project?.employerId) }"

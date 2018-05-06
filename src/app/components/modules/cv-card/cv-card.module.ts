@@ -10,6 +10,6 @@ import { CvCardGridPresComponent } from './presenters/cv-card-grid-pres/cv-card-
     SharedModule,
   ],
   declarations: [ CvCardPresComponent, CvCardGridPresComponent ],
-  exports: [ CvCardPresComponent ]
+  exports: [ CvCardPresComponent, CvCardGridPresComponent ]
 })
 export class CvCardModule {}
