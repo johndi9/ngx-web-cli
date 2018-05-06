@@ -1,7 +1,10 @@
 // Import bootstrap framework from node_modules
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-// Import flexbox grid
-@import '~flexboxgrid-sass/flexboxgrid.scss';
+// Import bootstrap utilities
+@import '~bootstrap/scss/_functions.scss';
+@import '~bootstrap/scss/_variables.scss';
+@import '~bootstrap/scss/_mixins.scss';
+@import '~bootstrap/scss/_utilities.scss';
 // Import icon files
 @import 'assets/scss/icons/material-design-icons';
 // Import common custom styles
