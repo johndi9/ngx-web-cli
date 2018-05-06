@@ -31,15 +31,6 @@ $logo-avatar-size: 50px !default;
       line-height: 1.5rem;
     }
   }
-
-  ::ng-deep {
-    .card-pic {
-      @include mat-elevation(2);
-      border-radius: rem(5);
-      height: $logo-avatar-size;
-      width: $logo-avatar-size;
-    }
-  }
 }
 
 .mat-card-header {
@@ -58,6 +49,22 @@ $logo-avatar-size: 50px !default;
   .mat-card-header-text {
     height: $mat-card-header-size;
     width: 100%;
+  }
+
+  ::ng-deep {
+    .mat-card-avatar {
+      @include mat-elevation(2);
+      border-radius: rem(5);
+      height: $logo-avatar-size;
+      overflow: hidden;
+      width: $logo-avatar-size;
+    }
+
+    .card-pic {
+      height: 100%;
+      width: 100%;
+      object-fit: fill;
+    }
   }
 }
 
