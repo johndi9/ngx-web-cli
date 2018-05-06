@@ -5,20 +5,8 @@
 <ng-template #cardTemplate let-project>
   <app-cv-card-pres class="card" [id]="project?.id" [title]="project?.title" [thumbImg]="project?.logo">
     <div class="card-recap">
-      <ng-template let-emp [ngTemplateOutlet]="t" #t
-                   [ngTemplateOutletContext]="{ $implicit: getEmployerFromProject(employs, project?.employerId) }">
-        <div class="d-flex align-items-center pb-1">
-          <mat-icon class="pr-2">place</mat-icon><span>{{ emp?.location }}</span>
-        </div>
-        <div class="d-flex align-items-center pb-1">
-          <mat-icon class="pr-2">business</mat-icon><span>{{ emp?.employer }}</span>
-        </div>
-      </ng-template>
-      <div class="d-flex align-items-center">
-        <mat-icon class="pr-2">date_range</mat-icon>
-        <app-cv-card-range-date-pres [startDate]="project?.start" [endDate]="project?.end"
-                                     [calculateDuration]="true"></app-cv-card-range-date-pres>
-      </div>
+      <ng-container
+        *ngTemplateOutlet="detailsTemplate; context: {$implicit: {employs: employs, project: project}}"></ng-container>
     </div>
     <div class="card-description">{{ project?.summary }}</div>
     <div class="card-actions">
@@ -29,4 +17,21 @@
          (click)="$event.stopPropagation()"><mat-icon>file_download</mat-icon>{{ 'labels.download' | translate }}</a>
     </div>
   </app-cv-card-pres>
+</ng-template>
+
+<ng-template #detailsTemplate let-ctx>
+  <ng-template let-emp [ngTemplateOutlet]="t" #t
+               [ngTemplateOutletContext]="{ $implicit: getEmployerFromProject(ctx?.employs, ctx?.project?.employerId) }">
+    <div class="d-flex align-items-center pb-1">
+      <mat-icon class="pr-2">place</mat-icon><span>{{ emp?.location }}</span>
+    </div>
+    <div class="d-flex align-items-center pb-1">
+      <mat-icon class="pr-2">business</mat-icon><span>{{ emp?.employer }}</span>
+    </div>
+  </ng-template>
+  <div class="d-flex align-items-center">
+    <mat-icon class="pr-2">date_range</mat-icon>
+    <app-cv-card-range-date-pres [startDate]="ctx?.project?.start" [endDate]="ctx?.project?.end"
+                                 [calculateDuration]="true"></app-cv-card-range-date-pres>
+  </div>
 </ng-template>
