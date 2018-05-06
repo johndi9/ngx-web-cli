@@ -1,0 +1,64 @@
+$mat-card-header-size: auto !default;
+$mat-card-header-title-font-size: 1.3rem !default;
+$logo-avatar-size: 50px !default;
+
+@include card-vertical-icon;
+
+.card-container {
+  .mat-card {
+    color: $color-base;
+    padding: 15px 15px 24px;
+  }
+
+  .mat-card-subtitle {
+    @include expand-card-section;
+    line-height: 1.2rem;
+    padding-bottom: 10px;
+  }
+
+  .mat-card-actions {
+    @include expand-card-section;
+    border-top: 1px solid $gray-lighter;
+  }
+
+  .mat-card-content {
+    div,
+    p {
+      font-family: $font-family-root;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+}
+
+.mat-card-header {
+  @include expand-card-section;
+  border-bottom: 1px solid $gray-lighter;
+  height: $mat-card-header-size;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+
+  .mat-card-title {
+    font-size: $mat-card-header-title-font-size;
+    margin-bottom: 0;
+    word-break: break-word;
+  }
+
+  .mat-card-header-text {
+    height: $mat-card-header-size;
+    width: 100%;
+  }
+}
+
+.mat-card-avatar {
+  @include mat-elevation(2);
+  border-radius: rem(5);
+  height: $logo-avatar-size;
+  width: $logo-avatar-size;
+}
+
+.no-logo-icon {
+  color: $gray-1;
+  font-size: 2.5rem;
+  padding: 5px;
+}

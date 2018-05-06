@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { getImage } from '../../../../../helpers/image.helper';
 
 @Component({
   selector: 'app-cv-card-pres',
   templateUrl: './cv-card-pres.component.html',
-  styleUrls: ['./cv-card-pres.component.scss']
+  styleUrls: [ './cv-card-pres.component.scss' ]
 })
-export class CvCardPresComponent implements OnInit {
+export class CvCardPresComponent {
+  @Input() title: string;
+  @Input() thumbImg: string;
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  getImage = getImage;
 }

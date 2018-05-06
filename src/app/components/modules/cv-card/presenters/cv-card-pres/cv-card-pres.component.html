@@ -1,3 +1,14 @@
-<p>
-  cv-card-pres works!
-</p>
+<div class="card-container">
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar>
+        <app-image *ngIf="thumbImg; else noImg" [image]="getImage({url: thumbImg, cssClass: 'card-pic'})"></app-image>
+        <ng-template #noImg><mat-icon class="no-logo-icon">business</mat-icon></ng-template>
+      </div>
+      <div class="mat-card-header-text"><mat-card-title>{{title}}</mat-card-title></div>
+    </mat-card-header>
+    <mat-card-subtitle><ng-content select=".card-recap"></ng-content></mat-card-subtitle>
+    <mat-card-content><ng-content select=".card-description"></ng-content></mat-card-content>
+    <mat-card-actions><ng-content select=".card-actions"></ng-content></mat-card-actions>
+  </mat-card>
+</div>
