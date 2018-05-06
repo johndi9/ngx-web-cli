@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MomentModule } from 'angular2-moment';
 import { MonthsDurationModule } from '../../../pipes/months-duration/months-duration.module';
 import { SharedModule } from '../../shared/shared.module';
 import { CvCardGridPresComponent } from './presenters/cv-card-grid-pres/cv-card-grid-pres.component';
@@ -10,6 +11,8 @@ import { CvCardRangeDatePresComponent } from './presenters/cv-card-range-date-pr
   imports: [
     CommonModule,
     SharedModule,
+    // Date pipes
+    MomentModule,
     MonthsDurationModule,
   ],
   declarations: [ CvCardPresComponent, CvCardGridPresComponent, CvCardRangeDatePresComponent ],
