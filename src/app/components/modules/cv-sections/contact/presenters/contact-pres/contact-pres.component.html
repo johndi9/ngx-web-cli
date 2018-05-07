@@ -1,3 +1,29 @@
-<p>
-  contact-pres works!
-</p>
+<div class="block">
+  <h2 class="sub-heading-styles">{{ 'labels.contactTitle' | translate }}</h2>
+
+  <div class="contact-wrapper">
+    <div class="separator">
+      <mat-icon class="contact-icon">desktop_windows</mat-icon>
+      <a md-button href="{{ contact?.website }}" target="_blank">{{ contact?.website }}</a>
+    </div>
+    <div class="separator"><mat-icon class="contact-icon">stay_primary_portrait</mat-icon>{{ contact.phone }}</div>
+    <div><mat-icon class="contact-icon">email</mat-icon>{{ contact.email }}</div>
+  </div>
+</div>
+
+<div class="block">
+  <h3>{{ 'labels.socialTitle' | translate }}</h3>
+
+  <div class="social-wrapper">
+    <div *ngFor="let soc of social" class="separator">
+      <i class="fa fa-{{ soc.icon }} contact-icon" aria-hidden="true"></i>
+      <a md-button class="social-link" href="{{ soc?.url }}" target="_blank">{{ soc?.url }}</a>
+    </div>
+  </div>
+</div>
+
+<div class="block">
+  <h3>{{ 'labels.locationTitle' | translate }}</h3>
+
+  <div class="map"></div>
+</div>
