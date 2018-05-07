@@ -4,10 +4,10 @@
   <div class="contact-wrapper">
     <div class="separator">
       <mat-icon class="contact-icon">desktop_windows</mat-icon>
-      <a md-button href="{{ contact?.website }}" target="_blank">{{ contact?.website }}</a>
+      <a mat-button href="{{ contact?.website }}" target="_blank">{{ contact?.website }}</a>
     </div>
-    <div class="separator"><mat-icon class="contact-icon">stay_primary_portrait</mat-icon>{{ contact.phone }}</div>
-    <div><mat-icon class="contact-icon">email</mat-icon>{{ contact.email }}</div>
+    <div class="separator"><mat-icon class="contact-icon">stay_primary_portrait</mat-icon>{{ contact?.phone }}</div>
+    <div><mat-icon class="contact-icon">email</mat-icon>{{ contact?.email }}</div>
   </div>
 </div>
 
@@ -16,8 +16,8 @@
 
   <div class="social-wrapper">
     <div *ngFor="let soc of social" class="separator">
-      <i class="fa fa-{{ soc.icon }} contact-icon" aria-hidden="true"></i>
-      <a md-button class="social-link" href="{{ soc?.url }}" target="_blank">{{ soc?.url }}</a>
+      <i class="fa fa-{{ soc?.icon }} contact-icon" aria-hidden="true"></i>
+      <a mat-button class="social-link" href="{{ soc?.url }}" target="_blank">{{ soc?.url }}</a>
     </div>
   </div>
 </div>

@@ -12,7 +12,7 @@
   position: relative;
 
   &:after {
-    background: linear-gradient(transparent 25%, $white);
+    background: linear-gradient(transparent 25%, $bg-base);
     content: '';
     height: 100%;
     left: 0;

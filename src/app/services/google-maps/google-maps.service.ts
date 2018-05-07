@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { createClient, MapOptions } from '@google/maps';
 import { styledMap } from '../../helpers/google-maps.helper';
-
-declare var google;
+import {} from '@types/googlemaps';
 
 @Injectable()
 export class GoogleMapsService {
   private geoCoder;
-  private readonly KEY = '';
+  private readonly KEY = 'AIzaSyAVVJ9dsIF1kXP0mfqAfCWOg5oyB1cvRWs';
 
   public constructor() {
     this.geoCoder = createClient({ key: this.KEY });

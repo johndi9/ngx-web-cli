@@ -24,11 +24,11 @@ export class ContactPresComponent implements AfterViewInit {
   }
 
   private createScriptElement(): HTMLScriptElement {
-    return {
-      ...document.createElement('script'),
-      type: 'text/javascript',
-      src: this._googleMapsService.getGoogleMapsUrl()
-    };
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = this._googleMapsService.getGoogleMapsUrl();
+
+    return script;
   }
 
   private onMapsReady() {
