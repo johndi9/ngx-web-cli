@@ -171,6 +171,10 @@
   dependencies:
     tslib "^1.7.1"
 
+"@google/maps@^0.4.6":
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/@google/maps/-/maps-0.4.6.tgz#0a1957fd71a4c9f30706b2fd2aac13cafd6a9072"
+
 "@ngrx/effects@^5.2.0":
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-5.2.0.tgz#aa762b69cb6fd4644d724a1cecd265caa42baf09"
