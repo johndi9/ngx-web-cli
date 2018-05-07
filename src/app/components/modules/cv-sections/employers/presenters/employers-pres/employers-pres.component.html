@@ -1,3 +1,31 @@
-<p>
-  employers-pres works!
-</p>
+<h2 class="sub-heading-styles">{{ 'labels.employsTitle' | translate }}</h2>
+
+<app-cv-card-grid-pres [items]="employs" [cardTemplate]="cardTemplate"></app-cv-card-grid-pres>
+
+<ng-template #cardTemplate let-employ>
+  <app-cv-card-pres class="card" [id]="employ?.id" [title]="employ?.employer" [thumbImg]="employ?.logo">
+    <div class="card-recap">
+      <ng-container
+        *ngTemplateOutlet="detailsTemplate; context: {$implicit: {employ: employ}}"></ng-container>
+    </div>
+    <div class="card-description">{{ employ?.summary }}</div>
+    <div class="card-actions">
+      <button mat-raised-button color="primary">{{ 'labels.moreDetails' | translate }}</button>
+      <a *ngIf="employ?.url" mat-raised-button href="{{ employ?.url }}" target="_blank"
+         (click)="$event.stopPropagation()">{{ 'labels.url' | translate }}</a>
+      <a *ngIf="employ?.download" mat-raised-button href="{{ '/assets/pdf/' + employ?.download }}" download
+         (click)="$event.stopPropagation()"><mat-icon>file_download</mat-icon>{{ 'labels.download' | translate }}</a>
+    </div>
+  </app-cv-card-pres>
+</ng-template>
+
+<ng-template #detailsTemplate let-ctx>
+  <div class="d-flex align-items-center pb-1">
+    <mat-icon class="pr-2">place</mat-icon><span>{{ ctx?.employ?.location }}</span>
+  </div>
+  <div class="d-flex align-items-center">
+    <mat-icon class="pr-2">date_range</mat-icon>
+    <app-cv-card-range-date-pres [startDate]="ctx?.employ?.start" [endDate]="ctx?.employ?.end"
+                                 [calculateDuration]="true"></app-cv-card-range-date-pres>
+  </div>
+</ng-template>
