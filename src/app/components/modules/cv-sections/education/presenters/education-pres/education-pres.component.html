@@ -1,3 +1,57 @@
-<p>
-  education-pres works!
-</p>
+<div class="block">
+  <h2 class="sub-heading-styles">{{ 'labels.educationTitle' | translate }}</h2>
+
+  <app-cv-card-grid-pres [items]="educations" [cardTemplate]="cardTemplate"></app-cv-card-grid-pres>
+
+  <ng-template #cardTemplate let-education>
+    <app-cv-card-pres class="card" [id]="education?.id" [title]="education?.title" [thumbImg]="education?.logo">
+      <div class="card-recap">
+        <ng-container *ngTemplateOutlet="detailsTemplate; context: {$implicit: {education: education}}"></ng-container>
+      </div>
+      <div class="card-description"><p *ngFor="let curriculum of education?.curriculum">{{ curriculum }}</p></div>
+      <div class="card-actions" *ngIf="education?.url">
+        <a mat-raised-button href="{{ education?.url }}" target="_blank">{{ 'labels.url' | translate }}</a>
+      </div>
+    </app-cv-card-pres>
+  </ng-template>
+
+  <ng-template #detailsTemplate let-ctx>
+    <div class="d-flex align-items-center pb-1">
+      <mat-icon class="pr-2">account_balance</mat-icon><span>{{ ctx?.education?.institution }}</span>
+    </div>
+    <div class="d-flex align-items-center">
+      <mat-icon class="pr-2">date_range</mat-icon>
+      <app-cv-card-range-date-pres [startDate]="ctx?.education?.start" [endDate]="ctx?.education?.end"
+                                   [calculateDuration]="false" [showOnlyYear]="true"></app-cv-card-range-date-pres>
+    </div>
+  </ng-template>
+</div>
+
+<div class="block">
+  <h3>{{ 'labels.languageTitle' | translate }}</h3>
+
+  <div *ngFor="let language of languages" class="sub-block">
+    <div class="highlight">{{ language?.language }}</div>
+    <div>{{ language?.level }}</div>
+  </div>
+</div>
+
+<div class="block">
+  <h3>{{ 'labels.certificateTitle' | translate }}</h3>
+
+  <div *ngFor="let certificate of certificates" class="sub-block">
+    <div class="highlight">{{ certificate?.date | date: 'y' }}</div>
+    <div>{{ certificate?.title }}</div>
+    <div>{{ certificate?.location }}</div>
+  </div>
+</div>
+
+<div class="block">
+  <h3>{{ 'labels.seminarTitle' | translate }}</h3>
+
+  <div *ngFor="let seminar of seminars" class="sub-block">
+    <div class="highlight">{{ seminar?.date | date: 'y' }}</div>
+    <div>{{ seminar?.title }}</div>
+    <div>{{ seminar?.organism }}</div>
+    <div>{{ seminar?.location }}</div>
+  </div>
