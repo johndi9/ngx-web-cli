@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input } from '@angular/core';
 import { ContactInt } from '../../../../../../interfaces/cv/contact/contact.int';
 import { LocationInt } from '../../../../../../interfaces/cv/location/location.int';
 import { SocialInt } from '../../../../../../interfaces/cv/social/social.int';
@@ -7,7 +7,8 @@ import { GoogleMapsService } from '../../../../../../services/google-maps/google
 @Component({
   selector: 'app-contact-pres',
   templateUrl: './contact-pres.component.html',
-  styleUrls: [ './contact-pres.component.scss' ]
+  styleUrls: [ './contact-pres.component.scss' ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactPresComponent implements AfterViewInit {
   @Input() contact: ContactInt;

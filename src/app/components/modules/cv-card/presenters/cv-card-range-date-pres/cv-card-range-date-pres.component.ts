@@ -1,9 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cv-card-range-date-pres',
   templateUrl: './cv-card-range-date-pres.component.html',
-  styleUrls: [ './cv-card-range-date-pres.component.scss' ]
+  styleUrls: [ './cv-card-range-date-pres.component.scss' ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CvCardRangeDatePresComponent implements OnInit {
   @Input() startDate: Date;

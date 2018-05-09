@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { getImage } from '../../../../../helpers/image.helper';
 
 @Component({
   selector: 'app-cv-card-pres',
   templateUrl: './cv-card-pres.component.html',
-  styleUrls: [ './cv-card-pres.component.scss' ]
+  styleUrls: [ './cv-card-pres.component.scss' ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CvCardPresComponent {
   @Input() id: number;
