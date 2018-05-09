@@ -1,3 +1,61 @@
-<p>
-  other-info-pres works!
-</p>
+<h2 class="sub-heading-styles">{{ 'labels.writingTitle' | translate }} / {{ 'labels.speakingTitle' | translate }}</h2>
+
+<div class="block">
+  <h3>{{ 'labels.writingTitle' | translate }}</h3>
+
+  <app-cv-card-grid-pres [items]="writings" [cardTemplate]="writingTemplate"></app-cv-card-grid-pres>
+
+  <ng-template #writingTemplate let-writing>
+    <app-cv-card-pres class="card" [title]="writing?.title" [thumbImg]="writing?.logo">
+      <div class="card-recap">
+        <ng-container *ngTemplateOutlet="detailsWritingTemplate; context: {$implicit: {writing: writing}}"></ng-container>
+      </div>
+      <div class="card-description">{{ writing?.summary }}</div>
+      <div class="card-actions" *ngIf="writing?.url">
+        <a mat-raised-button href="{{ writing?.url }}" target="_blank">{{ 'labels.url' | translate }}</a>
+      </div>
+    </app-cv-card-pres>
+  </ng-template>
+
+  <ng-template #detailsWritingTemplate let-ctx>
+    <div class="d-flex align-items-center pb-1">
+      <mat-icon class="pr-2">account_balance</mat-icon><span>{{ ctx?.writing?.publisher?.name }}</span>
+    </div>
+    <div class="d-flex align-items-center">
+      <mat-icon class="pr-2">date_range</mat-icon><span>{{ ctx?.writing?.date | date: 'y' }}</span>
+    </div>
+    <div class="d-flex align-items-center pb-1">
+      <mat-icon class="pr-2">supervisor_account</mat-icon><span>{{ ctx?.writing?.author }}</span>
+    </div>
+  </ng-template>
+</div>
+
+<div class="block">
+  <h3>{{ 'labels.speakingTitle' | translate }}</h3>
+
+  <app-cv-card-grid-pres [items]="speakings" [cardTemplate]="speakingTemplate"></app-cv-card-grid-pres>
+
+  <ng-template #speakingTemplate let-speaking>
+    <app-cv-card-pres class="card" [title]="speaking?.title" [thumbImg]="speaking?.logo">
+      <div class="card-recap">
+        <ng-container *ngTemplateOutlet="detailsSpeakingTemplate; context: {$implicit: {speaking: speaking}}"></ng-container>
+      </div>
+      <div class="card-description"><p *ngFor="let highlight of speaking?.highlights">{{ highlight }}</p></div>
+      <div class="card-actions" *ngIf="speaking?.url">
+        <a mat-raised-button href="{{ speaking?.url }}" target="_blank">{{ 'labels.url' | translate }}</a>
+      </div>
+    </app-cv-card-pres>
+  </ng-template>
+
+  <ng-template #detailsSpeakingTemplate let-ctx>
+    <div class="d-flex align-items-center pb-1">
+      <mat-icon class="pr-2">chat_bubble_outline</mat-icon><span>{{ ctx?.speaking?.event }}</span>
+    </div>
+    <div class="d-flex align-items-center pb-1">
+      <mat-icon class="pr-2">place</mat-icon><span>{{ ctx?.speaking?.location }}</span>
+    </div>
+    <div class="d-flex align-items-center">
+      <mat-icon class="pr-2">date_range</mat-icon><span>{{ ctx?.speaking?.date | date: 'y' }}</span>
+    </div>
+  </ng-template>
+</div>

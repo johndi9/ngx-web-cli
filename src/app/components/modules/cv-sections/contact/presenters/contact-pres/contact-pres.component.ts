@@ -33,6 +33,6 @@ export class ContactPresComponent implements AfterViewInit {
 
   private onMapsReady() {
     this._googleMapsService.createMap(this._element.nativeElement.querySelector('.map'),
-      `${this.location.city} ${this.location.country}`);
+      this.location ? `${this.location.city} ${this.location.country}` : '');
   }
 }
