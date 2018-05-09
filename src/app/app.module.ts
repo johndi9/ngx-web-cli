@@ -2,7 +2,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PreloadAllModules, RouterModule } from '@angular/router';
+import { PreloadAllModules, RouteReuseStrategy, RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 import { MetaReducer, StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -13,6 +13,7 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { ROUTES } from './app.routes';
 import { SharedModule } from './components/shared/shared.module';
+import { CustomReuseStrategy } from './reuse-strategy';
 import { reducers, State } from './state';
 import { CurriculumEffects } from './state/cv/cv.effect';
 
@@ -45,12 +46,14 @@ export function createTranslateLoader(http: HttpClient) {
       loader: {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
-        deps: [HttpClient]
+        deps: [ HttpClient ]
       }
     }),
     SharedModule
   ],
-  providers: [],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: CustomReuseStrategy }
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}
