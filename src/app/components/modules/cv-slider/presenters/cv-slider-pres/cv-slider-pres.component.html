@@ -1,5 +1,5 @@
 <div class="cv-slider-wrapper">
-  <swiper class="swiper-container fade-slide-in delay350">
+  <swiper (indexChange)="swipeTab($event)" class="swiper-container fade-slide-in delay350">
     <div class="swiper-slide">
       <app-personal-cont [info]="cv?.content?.info" [skillSets]="cv?.content?.skills?.sets"
                          [interests]="cv?.content?.interests" [aboutMe]="cv?.content?.aboutMe"></app-personal-cont>

@@ -19,5 +19,7 @@ export const getUrlTabs = () => ({
   [TAB_OPTIONS.CONTACT]: 'contact'
 });
 
+export const getUrlTab = (tab: TAB_OPTIONS) => getUrlTabs()[tab];
+
 export const getTabWithDefaults = (tab: Partial<TabInt>) =>
   ({ iconName: null, text: null, active: null, ...tab }) as TabInt;
