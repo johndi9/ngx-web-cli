@@ -11,7 +11,7 @@ import { TabService } from '../../../services/tab/tab.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
-  constructor(private cvService: CvService, private tabService: TabService, private router: Router) { }
+  constructor(private cvService: CvService, public tabService: TabService, private router: Router) { }
 
   ngOnInit() {
     this.cvService.loadCurriculum();

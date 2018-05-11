@@ -1,1 +1,2 @@
-<app-sticky-sidebar-pres [cv]="cvService.cv$ | async" (onTabSelected)="swipeTab($event)"></app-sticky-sidebar-pres>
+<app-sticky-sidebar-pres [cv]="cvService.cv$ | async" [tabSelected]="tabSelected"
+                         (onTabSelected)="swipeTab($event)"></app-sticky-sidebar-pres>

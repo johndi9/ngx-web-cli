@@ -33,3 +33,7 @@ $sidebar-container-overflow-y: 50px !default;
   padding: rem(20) rem(10);
   text-align: center;
 }
+
+.active-link {
+  background: $gray-lighter;
+}
