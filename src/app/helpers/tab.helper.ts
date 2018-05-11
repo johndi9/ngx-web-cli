@@ -11,15 +11,17 @@ export const getTabs = () => ([
 ].map(getTabWithDefaults)) as TabInt[];
 
 export const getUrlTabs = () => ({
-  [TAB_OPTIONS.PERSONAL_INFO]: 'personal',
-  [TAB_OPTIONS.PROJECTS]: 'projects',
-  [TAB_OPTIONS.EMPLOYS]: 'employers',
-  [TAB_OPTIONS.EDUCATION]: 'education',
-  [TAB_OPTIONS.OTHER_INFO]: 'other',
-  [TAB_OPTIONS.CONTACT]: 'contact'
+  [ TAB_OPTIONS.PERSONAL_INFO ]: 'personal',
+  [ TAB_OPTIONS.PROJECTS ]: 'projects',
+  [ TAB_OPTIONS.EMPLOYS ]: 'employers',
+  [ TAB_OPTIONS.EDUCATION ]: 'education',
+  [ TAB_OPTIONS.OTHER_INFO ]: 'other',
+  [ TAB_OPTIONS.CONTACT ]: 'contact'
 });
 
-export const getUrlTab = (tab: TAB_OPTIONS) => getUrlTabs()[tab];
+export const getUrlTab = (tab: TAB_OPTIONS) => getUrlTabs()[ tab ];
+
+export const getUrlTabKey = (tabString: string) => TAB_OPTIONS[TAB_OPTIONS[Object.keys(getUrlTabs()).find(key => getUrlTabs()[ key ] === tabString)]];
 
 export const getTabWithDefaults = (tab: Partial<TabInt>) =>
   ({ iconName: null, text: null, active: null, ...tab }) as TabInt;
