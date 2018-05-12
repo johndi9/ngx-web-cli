@@ -21,7 +21,8 @@ export const getUrlTabs = () => ({
 
 export const getUrlTab = (tab: TAB_OPTIONS) => getUrlTabs()[ tab ];
 
-export const getUrlTabKey = (tabString: string) => TAB_OPTIONS[TAB_OPTIONS[Object.keys(getUrlTabs()).find(key => getUrlTabs()[ key ] === tabString)]];
+export const getUrlTabKey = (tabString: string) => TAB_OPTIONS[ Object.keys(getUrlTabs())
+  .find(key => getUrlTabs()[ key ] === tabString) ] as TAB_OPTIONS;
 
 export const getTabWithDefaults = (tab: Partial<TabInt>) =>
   ({ iconName: null, text: null, active: null, ...tab }) as TabInt;

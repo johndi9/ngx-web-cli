@@ -6,7 +6,7 @@
   <app-cv-card-grid-pres [items]="writings" [cardTemplate]="writingTemplate"></app-cv-card-grid-pres>
 
   <ng-template #writingTemplate let-writing>
-    <app-cv-card-pres class="card" [title]="writing?.title" [thumbImg]="writing?.logo">
+    <app-cv-card-cont class="card" [title]="writing?.title" [thumbImg]="writing?.logo">
       <div class="card-recap">
         <ng-container *ngTemplateOutlet="detailsWritingTemplate; context: {$implicit: {writing: writing}}"></ng-container>
       </div>
@@ -14,7 +14,7 @@
       <div class="card-actions" *ngIf="writing?.url">
         <a mat-raised-button href="{{ writing?.url }}" target="_blank">{{ 'labels.url' | translate }}</a>
       </div>
-    </app-cv-card-pres>
+    </app-cv-card-cont>
   </ng-template>
 
   <ng-template #detailsWritingTemplate let-ctx>
@@ -36,7 +36,7 @@
   <app-cv-card-grid-pres [items]="speakings" [cardTemplate]="speakingTemplate"></app-cv-card-grid-pres>
 
   <ng-template #speakingTemplate let-speaking>
-    <app-cv-card-pres class="card" [title]="speaking?.title" [thumbImg]="speaking?.logo">
+    <app-cv-card-cont class="card" [title]="speaking?.title" [thumbImg]="speaking?.logo">
       <div class="card-recap">
         <ng-container *ngTemplateOutlet="detailsSpeakingTemplate; context: {$implicit: {speaking: speaking}}"></ng-container>
       </div>
@@ -44,7 +44,7 @@
       <div class="card-actions" *ngIf="speaking?.url">
         <a mat-raised-button href="{{ speaking?.url }}" target="_blank">{{ 'labels.url' | translate }}</a>
       </div>
-    </app-cv-card-pres>
+    </app-cv-card-cont>
   </ng-template>
 
   <ng-template #detailsSpeakingTemplate let-ctx>

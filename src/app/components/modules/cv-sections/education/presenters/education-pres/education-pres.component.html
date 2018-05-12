@@ -4,7 +4,7 @@
   <app-cv-card-grid-pres [items]="educations" [cardTemplate]="cardTemplate"></app-cv-card-grid-pres>
 
   <ng-template #cardTemplate let-education>
-    <app-cv-card-pres class="card" [id]="education?.id" [title]="education?.title" [thumbImg]="education?.logo">
+    <app-cv-card-cont class="card" [id]="education?.id" [title]="education?.title" [thumbImg]="education?.logo">
       <div class="card-recap">
         <ng-container *ngTemplateOutlet="detailsTemplate; context: {$implicit: {education: education}}"></ng-container>
       </div>
@@ -12,7 +12,7 @@
       <div class="card-actions" *ngIf="education?.url">
         <a mat-raised-button href="{{ education?.url }}" target="_blank">{{ 'labels.url' | translate }}</a>
       </div>
-    </app-cv-card-pres>
+    </app-cv-card-cont>
   </ng-template>
 
   <ng-template #detailsTemplate let-ctx>

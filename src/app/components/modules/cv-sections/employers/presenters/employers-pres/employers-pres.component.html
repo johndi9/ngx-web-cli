@@ -3,7 +3,7 @@
 <app-cv-card-grid-pres [items]="employs" [cardTemplate]="cardTemplate"></app-cv-card-grid-pres>
 
 <ng-template #cardTemplate let-employ>
-  <app-cv-card-pres class="card" [id]="employ?.id" [title]="employ?.employer" [thumbImg]="employ?.logo">
+  <app-cv-card-cont class="card" [id]="employ?.id" [title]="employ?.employer" [thumbImg]="employ?.logo">
     <div class="card-recap">
       <ng-container
         *ngTemplateOutlet="detailsTemplate; context: {$implicit: {employ: employ}}"></ng-container>
@@ -16,7 +16,7 @@
       <a *ngIf="employ?.download" mat-raised-button href="{{ '/assets/pdf/' + employ?.download }}" download
          (click)="$event.stopPropagation()"><mat-icon>file_download</mat-icon>{{ 'labels.download' | translate }}</a>
     </div>
-  </app-cv-card-pres>
+  </app-cv-card-cont>
 </ng-template>
 
 <ng-template #detailsTemplate let-ctx>
