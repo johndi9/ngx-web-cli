@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
+import { TAB_OPTIONS } from '../../../enum/tab/tab-options.enum';
 import { getStateFromUrl } from '../../../helpers/url.helper';
 import { CvService } from '../../../services/cv/cv.service';
 import { TabService } from '../../../services/tab/tab.service';
@@ -24,5 +25,9 @@ export class HomeComponent implements OnInit {
   private updateStateFromUrl(url: string): void {
     const { tab, modal } = getStateFromUrl(url);
     this.tabService.selectTab(tab);
+  }
+
+  public getTabIndex(tab: TAB_OPTIONS): string {
+    return TAB_OPTIONS[tab];
   }
 }
