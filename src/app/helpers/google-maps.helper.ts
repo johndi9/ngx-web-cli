@@ -1,4 +1,4 @@
-export const styledMap: google.maps.MapTypeStyle[] = [
+export const styledMap = [
   {
     'elementType': 'geometry',
     'stylers': [

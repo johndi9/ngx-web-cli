@@ -25,5 +25,7 @@
 <div class="block">
   <h3>{{ 'labels.locationTitle' | translate }}</h3>
 
-  <div class="map"></div>
+  <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
 </div>
