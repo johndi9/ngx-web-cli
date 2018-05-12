@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { MomentModule } from 'angular2-moment';
 import { MonthsDurationModule } from '../../../pipes/months-duration/months-duration.module';
 import { SharedModule } from '../../shared/shared.module';
+import { CvCardContComponent } from './containers/cv-card-cont/cv-card-cont.component';
 import { CvCardGridPresComponent } from './presenters/cv-card-grid-pres/cv-card-grid-pres.component';
 import { CvCardPresComponent } from './presenters/cv-card-pres/cv-card-pres.component';
 import { CvCardRangeDatePresComponent } from './presenters/cv-card-range-date-pres/cv-card-range-date-pres.component';
@@ -15,7 +16,7 @@ import { CvCardRangeDatePresComponent } from './presenters/cv-card-range-date-pr
     MomentModule,
     MonthsDurationModule,
   ],
-  declarations: [ CvCardPresComponent, CvCardGridPresComponent, CvCardRangeDatePresComponent ],
-  exports: [ CvCardPresComponent, CvCardGridPresComponent, CvCardRangeDatePresComponent ]
+  declarations: [ CvCardPresComponent, CvCardGridPresComponent, CvCardRangeDatePresComponent, CvCardContComponent ],
+  exports: [ CvCardContComponent, CvCardGridPresComponent, CvCardRangeDatePresComponent ]
 })
 export class CvCardModule {}
