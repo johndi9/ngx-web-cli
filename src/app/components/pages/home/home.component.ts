@@ -28,12 +28,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.cvService.loadCurriculum();
     this.updateStateFromUrl(this.router.url);
     this.subscriptions.push(
-      this.modalService.modal$.subscribe(modal => {
-        Promise.resolve(null).then(() => {
-          if (modal.id) { this.dialogRef = this.openDialog(modal.id); }
-          else { this.dialogRef = null; }
-        });
-      }),
+      this.modalService.modal$.subscribe(modal =>
+        Promise.resolve(null).then(() => this.manageModal(modal.id))),
       this.router.events.subscribe((nav) => {
         if (nav instanceof NavigationStart) { this.updateStateFromUrl(nav.url); }
       })
@@ -50,7 +46,22 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.modalService.openModal(modal);
   }
 
-  private openDialog(id: number): MatDialogRef<CvModalContComponent> {
-    return this.dialog.open(CvModalContComponent, { height: '350px' });
+  private manageModal(id: number): void {
+    if (id) {
+      this.dialogRef = this.openModal();
+    } else {
+      if (this.dialogRef) { this.dialogRef.close(); }
+      this.dialogRef = null;
+    }
+  }
+
+  private openModal(): MatDialogRef<CvModalContComponent> {
+    return this.dialog.open(CvModalContComponent, {
+      height: '100vh',
+      width: '100vw',
+      maxWidth: '100vw',
+      closeOnNavigation: true,
+      hasBackdrop: false
+    });
   }
 }

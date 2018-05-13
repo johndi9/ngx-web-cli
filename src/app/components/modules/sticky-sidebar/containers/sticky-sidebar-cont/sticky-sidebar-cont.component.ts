@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { TAB_OPTIONS } from '../../../../../enum/tab/tab-options.enum';
-import { newTabNavigation } from '../../../../../helpers/router.helper';
+import { navigateFromTab } from '../../../../../helpers/router.helper';
 import { CvService } from '../../../../../services/cv/cv.service';
 
 @Component({
@@ -16,6 +16,6 @@ export class StickySidebarContComponent {
   constructor(public cvService: CvService, private router: Router) {}
 
   swipeTab(tab: TAB_OPTIONS) {
-    newTabNavigation(this.router, tab);
+    navigateFromTab(this.router, tab);
   }
 }

@@ -7,14 +7,14 @@ export interface UrlHomeInterface {
 }
 
 export const getHomeStateFromUrl = (url: string) => {
-  const params = [ ...(url.split('/') || []).slice(1, 3) ];
+  const params = url.split('/') || [];
   return {
-    tab: getUrlTabKey(params[ 0 ]),
-    ...(params[ 1 ] ? { modal: Number(params[ 1 ]) } : {})
+    tab: getUrlTabKey(params[ 1 ]),
+    ...(params[ 2 ] ? { modal: Number(params[ 2 ]) } : {})
   } as UrlHomeInterface;
 };
 
-export const getUrlWithModalOpened = (url: string, id: number) => {
+export const getParsedHomeUrl = (url: string, modal?: number) => {
   const params = url.split('/') || [];
-  return `/${params[1]}/${id}`;
+  return modal ? `/${params[ 1 ]}/${modal}` : `/${params[ 1 ]}`;
 };

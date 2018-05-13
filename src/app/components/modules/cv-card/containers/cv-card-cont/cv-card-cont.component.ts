@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { getUrlWithModalOpened } from '../../../../../helpers/url.helper';
+import { getParsedHomeUrl } from '../../../../../helpers/url.helper';
 
 @Component({
   selector: 'app-cv-card-cont',
@@ -16,6 +16,6 @@ export class CvCardContComponent {
   constructor(private router: Router) {}
 
   openModal(id: number) {
-    this.router.navigate([ getUrlWithModalOpened(this.router.url, id) ]);
+    this.router.navigate([ getParsedHomeUrl(this.router.url, id) ]);
   }
 }
