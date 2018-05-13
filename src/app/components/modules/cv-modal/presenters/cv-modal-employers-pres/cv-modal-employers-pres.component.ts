@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-cv-modal-employers-pres',
   templateUrl: './cv-modal-employers-pres.component.html',
-  styleUrls: ['./cv-modal-employers-pres.component.css']
+  styleUrls: [ './cv-modal-employers-pres.component.scss' ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CvModalEmployersPresComponent implements OnInit {
 
   constructor() { }
 

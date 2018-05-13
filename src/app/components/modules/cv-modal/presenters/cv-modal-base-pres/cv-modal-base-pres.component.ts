@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-cv-modal-base-pres',
   templateUrl: './cv-modal-base-pres.component.html',
-  styleUrls: ['./cv-modal-base-pres.component.css']
+  styleUrls: [ './cv-modal-base-pres.component.scss' ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CvModalBasePresComponent implements OnInit {
 
