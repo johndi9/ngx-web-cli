@@ -42,7 +42,7 @@
   <h3>{{ 'labels.interests' | translate }}</h3>
 
   <ul class="interest-list">
-    <li *ngFor="let interest of interests">
+    <li *ngFor="let interest of interests" class="pb-3">
       <mat-icon>{{ interest.icon }}</mat-icon>
       <span>{{ interest.name }}</span>
     </li>
