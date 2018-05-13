@@ -8,5 +8,5 @@ export const getEmployerFromCv = (cv: CurriculumInt, employerId: number): Employ
 export const getEmployerFromProject = (employs: EmployInt[] = [], employerId: number): EmployInt =>
   employs.find((employ: EmployInt) => employ.id === employerId);
 
-export const getProject = (projects: ProjectInt[] = [], idProject: number): ProjectInt =>
-  projects.find((project: ProjectInt) => project.id === idProject);
+export const getProjectFromCv = (cv: CurriculumInt, projectId: number): ProjectInt =>
+  cv.projects.find((project: ProjectInt) => project.id === projectId);
