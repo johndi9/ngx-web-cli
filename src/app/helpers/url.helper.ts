@@ -6,10 +6,15 @@ export interface UrlHomeInterface {
   modal: number;
 }
 
-export const getStateFromUrl = (url: string) => {
-  const params = [ ...(url.split('/') || []).slice(1, 2) ];
+export const getHomeStateFromUrl = (url: string) => {
+  const params = [ ...(url.split('/') || []).slice(1, 3) ];
   return {
     tab: getUrlTabKey(params[ 0 ]),
     ...(params[ 1 ] ? { modal: Number(params[ 1 ]) } : {})
   } as UrlHomeInterface;
+};
+
+export const getUrlWithModalOpened = (url: string, id: number) => {
+  const params = url.split('/') || [];
+  return `/${params[1]}/${id}`;
 };

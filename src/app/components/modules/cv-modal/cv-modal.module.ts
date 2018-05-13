@@ -9,6 +9,7 @@ import { CvModalPresComponent } from './presenters/cv-modal-pres/cv-modal-pres.c
     CommonModule,
     SharedModule
   ],
-  declarations: [ CvModalContComponent, CvModalPresComponent ]
+  declarations: [ CvModalContComponent, CvModalPresComponent ],
+  entryComponents: [ CvModalContComponent ]
 })
 export class CvModalModule {}

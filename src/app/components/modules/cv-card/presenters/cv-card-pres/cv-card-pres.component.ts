@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { getImage } from '../../../../../helpers/image.helper';
 
 @Component({
@@ -8,9 +8,14 @@ import { getImage } from '../../../../../helpers/image.helper';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CvCardPresComponent {
+  @Output() openModalId: EventEmitter<number> = new EventEmitter<number>();
   @Input() id: number;
   @Input() title: string;
   @Input() thumbImg: string;
 
   getImage = getImage;
+
+  openModal(id: number) {
+    this.openModalId.emit(id);
+  }
 }

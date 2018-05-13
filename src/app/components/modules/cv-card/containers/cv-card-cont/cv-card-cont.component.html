@@ -1,4 +1,4 @@
-<app-cv-card-pres [id]="id" [title]="title" [thumbImg]="thumbImg">
+<app-cv-card-pres [id]="id" [title]="title" [thumbImg]="thumbImg" (openModalId)="openModal($event)">
   <ng-container class="card-recap"><ng-content select=".card-recap"></ng-content></ng-container>
   <ng-container class="card-description"><ng-content select=".card-description"></ng-content></ng-container>
   <ng-container class="card-actions"><ng-content select=".card-actions"></ng-content></ng-container>
