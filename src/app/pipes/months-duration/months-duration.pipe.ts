@@ -1,15 +1,23 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { OnDestroy, Pipe, PipeTransform } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 
 @Pipe({
   name: 'monthsDuration'
 })
-export class MonthsDurationPipe implements PipeTransform {
+export class MonthsDurationPipe implements PipeTransform, OnDestroy {
   private readonly MONTH_IN_YEAR: number = 12;
   private labels: Object = {};
+  private subscriptions: Subscription[] = [];
 
   constructor(private _translateService: TranslateService) {
-    _translateService.get('labels').subscribe((labels: Object) => this.labels = labels);
+    this.subscriptions.push(
+      _translateService.get('labels').subscribe((labels: Object) => this.labels = labels)
+    );
+  }
+
+  ngOnDestroy() {
+    this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
 
   transform(numberOfMonths: number): string {
