@@ -1,1 +1,3 @@
-<app-cv-modal-pres (onCloseModal)="closeModal()"></app-cv-modal-pres>
+<app-cv-modal-pres [cv]="cvService.cv$ | async"
+                   [urlState]="data"
+                   (onCloseModal)="closeModal()"></app-cv-modal-pres>

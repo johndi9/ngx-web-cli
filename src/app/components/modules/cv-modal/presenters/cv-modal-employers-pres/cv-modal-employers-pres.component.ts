@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { EmployInt } from '../../../../../interfaces/cv/employ/employ.int';
 
 @Component({
   selector: 'app-cv-modal-employers-pres',
@@ -6,10 +7,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   styleUrls: [ './cv-modal-employers-pres.component.scss' ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class CvModalEmployersPresComponent {
+  @Input() employ: EmployInt;
 }

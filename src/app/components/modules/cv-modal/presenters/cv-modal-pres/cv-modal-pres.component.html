@@ -1,10 +1,1 @@
-<h2 mat-dialog-title>Delete all</h2>
-<button mat-icon-button (click)="closeModal()">
-  <mat-icon class="md-24">highlight_off</mat-icon>
-</button>
-<mat-dialog-content>Are you sure?</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button mat-dialog-close>No</button>
-  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
-  <button mat-button [mat-dialog-close]="true">Yes</button>
-</mat-dialog-actions>
+<app-cv-modal-employers-pres [employ]="getEmployerFromCv(cv?.content, urlState?.modal)"></app-cv-modal-employers-pres>

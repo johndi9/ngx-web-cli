@@ -1,3 +1,6 @@
-<p>
-  cv-modal-base-pres works!
-</p>
+<h2 mat-dialog-title>{{ data?.title }}</h2>
+<button mat-icon-button (click)="closeModal()">
+  <mat-icon class="md-24">highlight_off</mat-icon>
+</button>
+<mat-dialog-content><ng-content select=".dialog-content"></ng-content></mat-dialog-content>
+<mat-dialog-actions><ng-content select=".dialog-actions"></ng-content></mat-dialog-actions>

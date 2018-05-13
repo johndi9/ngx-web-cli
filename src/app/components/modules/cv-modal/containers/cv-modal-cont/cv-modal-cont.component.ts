@@ -1,8 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material';
 import { Router } from '@angular/router';
 import { navigateAfterModalClosed } from '../../../../../helpers/router.helper';
-import { ModalService } from '../../../../../services/modal/modal.service';
-import { TabService } from '../../../../../services/tab/tab.service';
+import { UrlHomeInterface } from '../../../../../helpers/url.helper';
+import { CvService } from '../../../../../services/cv/cv.service';
 
 @Component({
   selector: 'app-cv-modal-cont',
@@ -10,12 +11,10 @@ import { TabService } from '../../../../../services/tab/tab.service';
   styleUrls: [ './cv-modal-cont.component.scss' ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CvModalContComponent implements OnInit {
+export class CvModalContComponent {
 
-  constructor(public tabService: TabService, public modalService: ModalService, private router: Router) { }
-
-  ngOnInit() {
-  }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: UrlHomeInterface, public cvService: CvService,
+              private router: Router) { }
 
   closeModal() {
     navigateAfterModalClosed(this.router);

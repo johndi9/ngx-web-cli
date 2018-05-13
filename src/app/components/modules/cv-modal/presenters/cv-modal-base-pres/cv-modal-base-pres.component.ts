@@ -6,11 +6,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   styleUrls: [ './cv-modal-base-pres.component.scss' ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CvModalBasePresComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class CvModalBasePresComponent {
+  @Input() data: any;
 }

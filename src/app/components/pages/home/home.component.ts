@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.updateStateFromUrl(this.router.url);
     this.subscriptions.push(
       this.modalService.modal$.subscribe(modal =>
-        Promise.resolve(null).then(() => this.manageModal(modal.id))),
+        Promise.resolve(null).then(() => this.manageModal(modal.id, this.router.url))),
       this.router.events.subscribe((nav) => {
         if (nav instanceof NavigationStart) { this.updateStateFromUrl(nav.url); }
       })
@@ -46,22 +46,23 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.modalService.openModal(modal);
   }
 
-  private manageModal(id: number): void {
+  private manageModal(id: number, url: string): void {
     if (id) {
-      this.dialogRef = this.openModal();
+      this.dialogRef = this.openModal(id, url);
     } else {
       if (this.dialogRef) { this.dialogRef.close(); }
       this.dialogRef = null;
     }
   }
 
-  private openModal(): MatDialogRef<CvModalContComponent> {
+  private openModal(id: number, url: string): MatDialogRef<CvModalContComponent> {
     return this.dialog.open(CvModalContComponent, {
       height: '100vh',
       width: '100vw',
       maxWidth: '100vw',
       closeOnNavigation: true,
-      hasBackdrop: false
+      hasBackdrop: false,
+      data: { ...getHomeStateFromUrl(url), modal: id }
     });
   }
 }

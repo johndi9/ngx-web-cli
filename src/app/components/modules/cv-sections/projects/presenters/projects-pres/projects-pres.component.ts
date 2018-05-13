@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { getEmployerFromProject } from '../../../../../../helpers/project.helper';
+import { getEmployerFromProject } from '../../../../../../helpers/cv.helper';
 import { EmployInt } from '../../../../../../interfaces/cv/employ/employ.int';
 import { ProjectInt } from '../../../../../../interfaces/cv/project/project.int';
 

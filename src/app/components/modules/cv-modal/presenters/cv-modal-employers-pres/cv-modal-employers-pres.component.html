@@ -1,3 +1,44 @@
-<p>
-  cv-modal-employers-pres works!
-</p>
+<app-cv-modal-base-pres [data]="employ">
+  <div class="dialog-content">
+    <ng-container *ngTemplateOutlet="contentTemplate; context: {$implicit: {employ: employ}}"></ng-container>
+  </div>
+  <div class="dialog-actions">
+    <button mat-raised-button color="primary">{{ 'labels.moreDetails' | translate }}</button>
+    <a *ngIf="employ?.url" mat-raised-button href="{{ employ?.url }}" target="_blank"
+       (click)="$event.stopPropagation()">{{ 'labels.url' | translate }}</a>
+    <a *ngIf="employ?.download" mat-raised-button href="{{ '/assets/pdf/' + employ?.download }}" download
+       (click)="$event.stopPropagation()"><mat-icon>file_download</mat-icon>{{ 'labels.download' | translate }}</a>
+  </div>
+</app-cv-modal-base-pres>
+
+<ng-template #contentTemplate let-ctx>
+  <div class="block">
+    <div class="d-flex align-items-center pb-1">
+      <mat-icon class="pr-2">place</mat-icon><span>{{ ctx?.employ?.location }}</span>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <mat-icon class="pr-2">date_range</mat-icon>
+      <app-date-range-pres [startDate]="ctx?.employ?.start" [endDate]="ctx?.employ?.end"
+                           [calculateDuration]="true"></app-date-range-pres>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3 class="dialog-subtitle">{{ ctx?.employ?.summary }}</h3>
+    <ul class="items">
+      <li *ngFor="let highlight of ctx?.employ?.highlights">{{ highlight }}</li>
+    </ul>
+  </div>
+
+  <div class="block" *ngIf="ctx?.employ?.keywords?.length > 1">
+    <h3 class="dialog-subtitle">{{ 'labels.skills' | translate }}</h3>
+    <div class="chip-wrapper">
+      <mat-chip-list>
+        <div class="skill-container">
+          <mat-chip *ngFor="let key of ctx?.employ?.keywords" [color]="color">{{ key }}</mat-chip>
+        </div>
+      </mat-chip-list>
+    </div>
+  </div>
+</ng-template>
