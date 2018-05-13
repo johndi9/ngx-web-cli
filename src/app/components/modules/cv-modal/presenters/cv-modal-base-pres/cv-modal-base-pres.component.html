@@ -1,6 +1,7 @@
-<h2 mat-dialog-title>{{ data?.title }}</h2>
-<button mat-icon-button (click)="closeModal()">
-  <mat-icon class="md-24">highlight_off</mat-icon>
-</button>
-<mat-dialog-content><ng-content select=".dialog-content"></ng-content></mat-dialog-content>
-<mat-dialog-actions><ng-content select=".dialog-actions"></ng-content></mat-dialog-actions>
+<div class="d-flex align-items-center border-bottom p-4" [ngStyle]="{'color': data?.color, 'background': data?.backgroundColor }">
+  <h2 class="fade-slide-in flex-grow-1 m-0">{{ data?.title }}</h2>
+  <button mat-icon-button (click)="closeModal()">
+    <mat-icon class="md-24">highlight_off</mat-icon>
+  </button>
+</div>
+<mat-dialog-content><div class="p-4"><ng-content select=".dialog-content"></ng-content></div></mat-dialog-content>

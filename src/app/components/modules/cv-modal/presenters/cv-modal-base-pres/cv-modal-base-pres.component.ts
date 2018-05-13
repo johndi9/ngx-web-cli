@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ModalTitleInt } from '../../../../../interfaces/modal/modal.int';
 
 @Component({
   selector: 'app-cv-modal-base-pres',
@@ -7,5 +8,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CvModalBasePresComponent {
-  @Input() data: any;
+  @Input() data: ModalTitleInt;
 }

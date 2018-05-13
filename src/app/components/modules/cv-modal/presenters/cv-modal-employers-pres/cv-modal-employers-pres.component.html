@@ -1,17 +1,13 @@
-<app-cv-modal-base-pres [data]="employ">
+<app-cv-modal-base-pres [data]="getModalDataTitleFromEmploy(employ)" class="d-flex flex-column dialog-wrapper">
   <div class="dialog-content">
-    <ng-container *ngTemplateOutlet="contentTemplate; context: {$implicit: {employ: employ}}"></ng-container>
-  </div>
-  <div class="dialog-actions">
-    <button mat-raised-button color="primary">{{ 'labels.moreDetails' | translate }}</button>
-    <a *ngIf="employ?.url" mat-raised-button href="{{ employ?.url }}" target="_blank"
-       (click)="$event.stopPropagation()">{{ 'labels.url' | translate }}</a>
-    <a *ngIf="employ?.download" mat-raised-button href="{{ '/assets/pdf/' + employ?.download }}" download
-       (click)="$event.stopPropagation()"><mat-icon>file_download</mat-icon>{{ 'labels.download' | translate }}</a>
+    <ng-container *ngTemplateOutlet="detailsTemplate; context: {$implicit: {employ: employ}}"></ng-container>
+    <ng-container *ngTemplateOutlet="mainPointsTemplate; context: {$implicit: {employ: employ}}"></ng-container>
+    <ng-container *ngTemplateOutlet="skillsTemplate; context: {$implicit: {employ: employ}}"></ng-container>
+    <ng-container *ngTemplateOutlet="actionsTemplate; context: {$implicit: {employ: employ}}"></ng-container>
   </div>
 </app-cv-modal-base-pres>
 
-<ng-template #contentTemplate let-ctx>
+<ng-template #detailsTemplate let-ctx>
   <div class="block">
     <div class="d-flex align-items-center pb-1">
       <mat-icon class="pr-2">place</mat-icon><span>{{ ctx?.employ?.location }}</span>
@@ -23,22 +19,35 @@
                            [calculateDuration]="true"></app-date-range-pres>
     </div>
   </div>
+</ng-template>
 
+<ng-template #mainPointsTemplate let-ctx>
   <div class="block">
     <h3 class="dialog-subtitle">{{ ctx?.employ?.summary }}</h3>
     <ul class="items">
       <li *ngFor="let highlight of ctx?.employ?.highlights">{{ highlight }}</li>
     </ul>
   </div>
+</ng-template>
 
+<ng-template #skillsTemplate let-ctx>
   <div class="block" *ngIf="ctx?.employ?.keywords?.length > 1">
     <h3 class="dialog-subtitle">{{ 'labels.skills' | translate }}</h3>
     <div class="chip-wrapper">
       <mat-chip-list>
         <div class="skill-container">
-          <mat-chip *ngFor="let key of ctx?.employ?.keywords" [color]="color">{{ key }}</mat-chip>
+          <mat-chip *ngFor="let key of ctx?.employ?.keywords" color="primary" selected="true">{{ key }}</mat-chip>
         </div>
       </mat-chip-list>
     </div>
   </div>
+</ng-template>
+
+<ng-template #actionsTemplate let-ctx>
+  <div *ngIf="ctx?.employ?.url || ctx?.employ?.download">
+      <a *ngIf="ctx?.employ?.url" mat-raised-button href="{{ ctx?.employ?.url }}" target="_blank"
+         (click)="$event.stopPropagation()">{{ 'labels.url' | translate }}</a>
+      <a *ngIf="ctx?.employ?.download" mat-raised-button href="{{ '/assets/pdf/' + ctx?.employ?.download }}" download
+         (click)="$event.stopPropagation()"><mat-icon>file_download</mat-icon>{{ 'labels.download' | translate }}</a>
+    </div>
 </ng-template>

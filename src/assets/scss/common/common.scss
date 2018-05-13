@@ -13,3 +13,7 @@ html, body {
 .no-scroll {
   overflow: hidden;
 }
+
+.ngx-dialog .mat-dialog-container {
+  padding: 0;
+}

@@ -1,0 +1,7 @@
+@import 'utils';
+
+@include dialog-structure;
+
+.mat-dialog-content {
+  max-height: none;
+}

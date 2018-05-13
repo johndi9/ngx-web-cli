@@ -62,6 +62,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       maxWidth: '100vw',
       closeOnNavigation: true,
       hasBackdrop: false,
+      panelClass: 'ngx-dialog',
       data: { ...getHomeStateFromUrl(url), modal: id }
     });
   }

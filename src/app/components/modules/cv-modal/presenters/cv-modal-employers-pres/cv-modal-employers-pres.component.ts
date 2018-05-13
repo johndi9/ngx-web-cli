@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { getModalDataTitleFromEmploy } from '../../../../../helpers/modal.helper';
 import { EmployInt } from '../../../../../interfaces/cv/employ/employ.int';
 
 @Component({
@@ -9,4 +10,6 @@ import { EmployInt } from '../../../../../interfaces/cv/employ/employ.int';
 })
 export class CvModalEmployersPresComponent {
   @Input() employ: EmployInt;
+
+  getModalDataTitleFromEmploy = getModalDataTitleFromEmploy;
 }

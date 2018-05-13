@@ -4,7 +4,12 @@ $mat-card-header-size: auto !default;
 $mat-card-header-title-font-size: 1.3rem !default;
 $logo-avatar-size: 50px !default;
 
-@include card-vertical-icon;
+@mixin expand-card-section {
+  margin-left: -16px;
+  margin-right: -16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
 
 .card-container {
   .mat-card {
@@ -66,6 +71,11 @@ $logo-avatar-size: 50px !default;
       object-fit: fill;
     }
   }
+}
+
+.mat-icon {
+  font-size: rem(20);
+  vertical-align: middle;
 }
 
 .no-logo-icon {
