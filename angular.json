@@ -30,7 +30,7 @@
               "includePaths": [
                 "src/assets/scss/utils"
               ]
-            },
+            }
           },
           "configurations": {
             "production": {
