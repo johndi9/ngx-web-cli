@@ -6,7 +6,6 @@ import { DateRangeModule } from '../date-range/date-range.module';
 import { CvModalContComponent } from './containers/cv-modal-cont/cv-modal-cont.component';
 import { CvModalBasePresComponent } from './presenters/cv-modal-base-pres/cv-modal-base-pres.component';
 import { CvModalEmployersPresComponent } from './presenters/cv-modal-employers-pres/cv-modal-employers-pres.component';
-import { CvModalPresComponent } from './presenters/cv-modal-pres/cv-modal-pres.component';
 import { CvModalProjectsPresComponent } from './presenters/cv-modal-projects-pres/cv-modal-projects-pres.component';
 
 @NgModule({
@@ -16,7 +15,7 @@ import { CvModalProjectsPresComponent } from './presenters/cv-modal-projects-pre
     CvModule,
     DateRangeModule,
   ],
-  declarations: [ CvModalContComponent, CvModalPresComponent, CvModalProjectsPresComponent, CvModalEmployersPresComponent,
+  declarations: [ CvModalContComponent, CvModalProjectsPresComponent, CvModalEmployersPresComponent,
     CvModalBasePresComponent ],
   entryComponents: [ CvModalContComponent ]
 })

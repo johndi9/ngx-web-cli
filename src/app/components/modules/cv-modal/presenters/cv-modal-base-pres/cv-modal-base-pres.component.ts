@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { ModalTitleInt } from '../../../../../interfaces/modal/modal.int';
 
 @Component({
@@ -8,5 +8,10 @@ import { ModalTitleInt } from '../../../../../interfaces/modal/modal.int';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CvModalBasePresComponent {
+  @Output() onCloseModal: EventEmitter<void> = new EventEmitter<void>();
   @Input() data: ModalTitleInt;
+
+  closeModal() {
+    this.onCloseModal.emit();
+  }
 }

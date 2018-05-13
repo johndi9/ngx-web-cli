@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { getModalDataTitleFromEmploy } from '../../../../../helpers/modal.helper';
 import { EmployInt } from '../../../../../interfaces/cv/employ/employ.int';
 
@@ -9,7 +9,12 @@ import { EmployInt } from '../../../../../interfaces/cv/employ/employ.int';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CvModalEmployersPresComponent {
+  @Output() onCloseModal: EventEmitter<void> = new EventEmitter<void>();
   @Input() employ: EmployInt;
 
   getModalDataTitleFromEmploy = getModalDataTitleFromEmploy;
+
+  closeModal() {
+    this.onCloseModal.emit();
+  }
 }

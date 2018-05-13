@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
 import { Router } from '@angular/router';
+import { getEmployerFromCv } from '../../../../../helpers/cv.helper';
 import { navigateAfterModalClosed } from '../../../../../helpers/router.helper';
 import { UrlHomeInterface } from '../../../../../helpers/url.helper';
 import { CvService } from '../../../../../services/cv/cv.service';
@@ -12,9 +13,9 @@ import { CvService } from '../../../../../services/cv/cv.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CvModalContComponent {
+  getEmployerFromCv = getEmployerFromCv;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: UrlHomeInterface, public cvService: CvService,
-              private router: Router) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: UrlHomeInterface, public cvService: CvService, private router: Router) { }
 
   closeModal() {
     navigateAfterModalClosed(this.router);

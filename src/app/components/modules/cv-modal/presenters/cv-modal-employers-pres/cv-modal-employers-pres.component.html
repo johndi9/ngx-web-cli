@@ -1,4 +1,5 @@
-<app-cv-modal-base-pres [data]="getModalDataTitleFromEmploy(employ)" class="d-flex flex-column dialog-wrapper">
+<app-cv-modal-base-pres [data]="getModalDataTitleFromEmploy(employ)" (onCloseModal)="closeModal()"
+                        class="d-flex flex-column dialog-wrapper">
   <div class="dialog-content">
     <ng-container *ngTemplateOutlet="detailsTemplate; context: {$implicit: {employ: employ}}"></ng-container>
     <ng-container *ngTemplateOutlet="mainPointsTemplate; context: {$implicit: {employ: employ}}"></ng-container>

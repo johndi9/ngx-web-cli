@@ -10,9 +10,9 @@ import { XhrStateInt } from '../../../../../interfaces/xhr-state/xhr-state.int';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CvSliderPresComponent {
+  @Output() onTabSelected: EventEmitter<TAB_OPTIONS> = new EventEmitter<TAB_OPTIONS>();
   @Input() cv: XhrStateInt<CurriculumInt>;
   @Input() tabSelected: TAB_OPTIONS;
-  @Output() onTabSelected: EventEmitter<TAB_OPTIONS> = new EventEmitter<TAB_OPTIONS>();
 
   swipeTab(tab: TAB_OPTIONS) {
     this.onTabSelected.emit(tab);

@@ -1,3 +1,6 @@
-<app-cv-modal-pres [cv]="cvService.cv$ | async"
-                   [urlState]="data"
-                   (onCloseModal)="closeModal()"></app-cv-modal-pres>
+<ng-container *ngIf="(cvService.cv$ | async) as cv">
+  <app-cv-modal-employers-pres *ngIf="cv?.content"
+                               [employ]="getEmployerFromCv(cv?.content, data?.modal)"
+                               (onCloseModal)="closeModal()"></app-cv-modal-employers-pres>
+</ng-container>
+
