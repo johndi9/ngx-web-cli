@@ -10,7 +10,7 @@ describe('GoogleMapPresComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ GoogleMapPresComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

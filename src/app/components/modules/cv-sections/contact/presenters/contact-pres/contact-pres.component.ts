@@ -13,7 +13,4 @@ export class ContactPresComponent {
   @Input() contact: ContactInt;
   @Input() location: LocationInt;
   @Input() social: SocialInt;
-
-  lat = 51.678418;
-  lng = 7.809007;
 }
