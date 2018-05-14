@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { parseStringToDate } from '../../../../../helpers/date.helper';
 
 @Component({
   selector: 'app-date-range-pres',
@@ -13,6 +14,7 @@ export class DateRangePresComponent implements OnInit {
   @Input() showOnlyYear: boolean;
 
   dateFormat: string;
+  parseStringToDate = parseStringToDate;
 
   private readonly YEAR_MONTH_FORMAT: string = 'y/MM';
   private readonly YEAR_FORMAT: string = 'y';
