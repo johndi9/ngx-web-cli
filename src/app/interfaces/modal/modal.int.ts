@@ -1,5 +1,5 @@
 export interface ModalTitleInt {
-  title: number;
+  title: string;
   color: string;
   backgroundColor: string;
 }
