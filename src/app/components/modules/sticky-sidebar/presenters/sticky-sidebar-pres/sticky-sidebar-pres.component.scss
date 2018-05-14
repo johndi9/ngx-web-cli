@@ -3,7 +3,7 @@
 $profile-pic-size: rem(90) !default;
 $profile-pic-overflow-y: 45px !default;
 $sidebar-container-overflow-y: 50px !default;
-$mat-menu-container-width: 200px !default;
+$mat-menu-container-width: 250px !default;
 
 .sidebar-container {
   @include mat-elevation(6);

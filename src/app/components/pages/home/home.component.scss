@@ -7,3 +7,8 @@
 .main-wrapper {
   background: $bg-base;
 }
+
+.main-wrapper-limit {
+  margin: 0 auto;
+  max-width: $page-max-width;
+}
