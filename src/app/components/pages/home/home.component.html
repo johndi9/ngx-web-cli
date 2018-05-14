@@ -2,10 +2,10 @@
   <app-dynamic-header-cont></app-dynamic-header-cont>
 </div>
 <div class="d-flex main-wrapper">
-  <div class="p-2 w-25">
+  <div class="p-2">
     <app-sticky-sidebar-cont [tabSelected]="TAB_OPTIONS[(tabService?.tab$ | async)?.id]"></app-sticky-sidebar-cont>
   </div>
-  <div class="p-2 w-75">
+  <div class="p-2 w-75 flex-grow-1">
     <app-cv-slider-cont [tabSelected]="TAB_OPTIONS[(tabService?.tab$ | async)?.id]"></app-cv-slider-cont>
   </div>
 </div>

@@ -3,6 +3,7 @@
 $profile-pic-size: rem(90) !default;
 $profile-pic-overflow-y: 45px !default;
 $sidebar-container-overflow-y: 50px !default;
+$mat-menu-container-width: 200px !default;
 
 .sidebar-container {
   @include mat-elevation(6);
@@ -10,6 +11,7 @@ $sidebar-container-overflow-y: 50px !default;
   margin-top: -$sidebar-container-overflow-y;
   position: sticky;
   top: $sidebar-container-overflow-y;
+  width: $mat-menu-container-width;
 
   .mat-list-item {
     color: $color-base;
