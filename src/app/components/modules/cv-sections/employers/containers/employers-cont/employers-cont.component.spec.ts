@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { getTestingModuleConfig } from '../../../../../../helpers/tests.helper';
 import { EmployersContComponent } from './employers-cont.component';
 
 describe('EmployersContComponent', () => {
@@ -7,10 +7,7 @@ describe('EmployersContComponent', () => {
   let fixture: ComponentFixture<EmployersContComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ EmployersContComponent ]
-    })
-    .compileComponents();
+    TestBed.configureTestingModule(getTestingModuleConfig()).compileComponents();
   }));
 
   beforeEach(() => {

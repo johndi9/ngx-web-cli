@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { getTestingModuleConfig } from '../../../../../../helpers/tests.helper';
 import { EducationPresComponent } from './education-pres.component';
 
 describe('EducationPresComponent', () => {
@@ -7,10 +7,7 @@ describe('EducationPresComponent', () => {
   let fixture: ComponentFixture<EducationPresComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ EducationPresComponent ]
-    })
-    .compileComponents();
+    TestBed.configureTestingModule(getTestingModuleConfig()).compileComponents();
   }));
 
   beforeEach(() => {

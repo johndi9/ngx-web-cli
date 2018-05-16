@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { getTestingModuleConfig } from '../../../../../helpers/tests.helper';
 import { CvModalProjectsPresComponent } from './cv-modal-projects-pres.component';
 
 describe('CvModalProjectsPresComponent', () => {
@@ -7,10 +7,7 @@ describe('CvModalProjectsPresComponent', () => {
   let fixture: ComponentFixture<CvModalProjectsPresComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ CvModalProjectsPresComponent ]
-    })
-    .compileComponents();
+    TestBed.configureTestingModule(getTestingModuleConfig()).compileComponents();
   }));
 
   beforeEach(() => {

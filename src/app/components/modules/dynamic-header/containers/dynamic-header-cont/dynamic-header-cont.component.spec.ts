@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { getTestingModuleConfig } from '../../../../../helpers/tests.helper';
 import { DynamicHeaderContComponent } from './dynamic-header-cont.component';
 
 describe('DynamicHeaderContComponent', () => {
@@ -7,9 +7,7 @@ describe('DynamicHeaderContComponent', () => {
   let fixture: ComponentFixture<DynamicHeaderContComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ DynamicHeaderContComponent ]
-    }).compileComponents();
+    TestBed.configureTestingModule(getTestingModuleConfig()).compileComponents();
   }));
 
   beforeEach(() => {

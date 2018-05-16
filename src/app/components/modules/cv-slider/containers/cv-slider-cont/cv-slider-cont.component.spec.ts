@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { getTestingModuleConfig } from '../../../../../helpers/tests.helper';
 import { CvSliderContComponent } from './cv-slider-cont.component';
 
 describe('CvSliderContComponent', () => {
@@ -7,10 +7,7 @@ describe('CvSliderContComponent', () => {
   let fixture: ComponentFixture<CvSliderContComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ CvSliderContComponent ]
-    })
-    .compileComponents();
+    TestBed.configureTestingModule(getTestingModuleConfig()).compileComponents();
   }));
 
   beforeEach(() => {

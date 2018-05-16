@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { getTestingModuleConfig } from '../../../../../helpers/tests.helper';
 import { LogoPresComponent } from './logo-pres.component';
 
 describe('LogoPresComponent', () => {
@@ -7,9 +7,7 @@ describe('LogoPresComponent', () => {
   let fixture: ComponentFixture<LogoPresComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ LogoPresComponent ]
-    }).compileComponents();
+    TestBed.configureTestingModule(getTestingModuleConfig()).compileComponents();
   }));
 
   beforeEach(() => {

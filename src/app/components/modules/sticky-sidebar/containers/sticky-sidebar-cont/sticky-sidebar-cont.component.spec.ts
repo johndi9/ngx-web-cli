@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { getTestingModuleConfig } from '../../../../../helpers/tests.helper';
 import { StickySidebarContComponent } from './sticky-sidebar-cont.component';
 
 describe('StickySidebarContComponent', () => {
@@ -7,9 +7,7 @@ describe('StickySidebarContComponent', () => {
   let fixture: ComponentFixture<StickySidebarContComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ StickySidebarContComponent ]
-    })
+    TestBed.configureTestingModule(getTestingModuleConfig())
       .compileComponents();
   }));
 

@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { getTestingModuleConfig } from '../../../../../../helpers/tests.helper';
 import { OtherInfoContComponent } from './other-info-cont.component';
 
 describe('OtherInfoContComponent', () => {
@@ -7,10 +7,7 @@ describe('OtherInfoContComponent', () => {
   let fixture: ComponentFixture<OtherInfoContComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ OtherInfoContComponent ]
-    })
-    .compileComponents();
+    TestBed.configureTestingModule(getTestingModuleConfig()).compileComponents();
   }));
 
   beforeEach(() => {

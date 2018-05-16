@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { getTestingModuleConfig } from '../../../../../helpers/tests.helper';
 import { CvCardContComponent } from './cv-card-cont.component';
 
 describe('CvCardContComponent', () => {
@@ -7,10 +7,7 @@ describe('CvCardContComponent', () => {
   let fixture: ComponentFixture<CvCardContComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ CvCardContComponent ]
-    })
-    .compileComponents();
+    TestBed.configureTestingModule(getTestingModuleConfig()).compileComponents();
   }));
 
   beforeEach(() => {

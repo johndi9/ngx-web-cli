@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { getTestingModuleConfig } from '../../../helpers/tests.helper';
 import { ImageComponent } from './image.component';
 
 describe('ImageComponent', () => {
@@ -7,10 +7,7 @@ describe('ImageComponent', () => {
   let fixture: ComponentFixture<ImageComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ImageComponent ]
-    })
-      .compileComponents();
+    TestBed.configureTestingModule(getTestingModuleConfig()).compileComponents();
   }));
 
   beforeEach(() => {
