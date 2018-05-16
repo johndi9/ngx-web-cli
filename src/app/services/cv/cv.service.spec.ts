@@ -1,15 +1,17 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
+import { Store, StoreModule } from '@ngrx/store';
 
 import { CvService } from './cv.service';
 
 describe('CvService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [CvService]
+      imports: [ StoreModule.forRoot({}) ],
+      providers: [ CvService, Store ]
     });
   });
 
-  it('should be created', inject([CvService], (service: CvService) => {
+  it('should be created', inject([ CvService ], (service: CvService) => {
     expect(service).toBeTruthy();
   }));
 });
