@@ -21,6 +21,6 @@ export class CvSliderPresComponent {
   }
 
   getCurrentTabHeight(tab: TAB_OPTIONS) {
-    return this.element.nativeElement.querySelectorAll('.swiper-slide-inner')[ tab ].scrollHeight;
+    return (this.element.nativeElement.querySelectorAll('.swiper-slide-inner')[ tab ] || {}).scrollHeight;
   }
 }

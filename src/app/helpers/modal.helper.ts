@@ -2,13 +2,13 @@ import { EmployInt } from '../interfaces/cv/employ/employ.int';
 import { ProjectInt } from '../interfaces/cv/project/project.int';
 import { ModalTitleInt } from '../interfaces/modal/modal.int';
 
-export const getModalDataTitleFromEmploy = (employ: EmployInt) => ({
+export const getModalDataTitleFromEmploy = (employ: EmployInt = <EmployInt>{}) => ({
   title: employ.employer,
   color: employ.color,
   backgroundColor: employ.backgroundColor
 }) as ModalTitleInt;
 
-export const getModalDataTitleFromProject = (project: ProjectInt) => ({
+export const getModalDataTitleFromProject = (project: ProjectInt = <ProjectInt>{}) => ({
   title: project.title,
   color: project.color,
   backgroundColor: project.backgroundColor
