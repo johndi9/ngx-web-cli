@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { TAB_OPTIONS } from '../../../../../enum/tab/tab-options.enum';
 import { getImage } from '../../../../../helpers/image.helper';
-import { getTabs } from '../../../../../helpers/tab.helper';
+import { getTabs, getTranslationTabKeys } from '../../../../../helpers/tab.helper';
 import { CurriculumInt } from '../../../../../interfaces/cv/curriculum.int';
 import { XhrStateInt } from '../../../../../interfaces/xhr-state/xhr-state.int';
 
@@ -18,8 +18,7 @@ export class StickySidebarPresComponent {
 
   getImage = getImage;
   getTabs = getTabs;
-
-  tabKeys: string[] = [ 'personalInfoTitle', 'projectsTitle', 'employsTitle', 'educationTitle', 'otherInfoTitle', 'contactTitle' ];
+  getTranslationTabKeys = getTranslationTabKeys;
 
   swipeTab(tab: TAB_OPTIONS) {
     this.onTabSelected.emit(tab);

@@ -10,6 +10,15 @@ export const getTabs = () => ([
   { id: 5, iconName: 'email' }
 ].map(getTabWithDefaults)) as TabInt[];
 
+export const getTranslationTabKeys = () => ([
+  'personalInfoTitle',
+  'projectsTitle',
+  'employsTitle',
+  'educationTitle',
+  'otherInfoTitle',
+  'contactTitle'
+]) as string[];
+
 export const getUrlTabs = () => ({
   [ TAB_OPTIONS.PERSONAL_INFO ]: 'personal',
   [ TAB_OPTIONS.PROJECTS ]: 'projects',

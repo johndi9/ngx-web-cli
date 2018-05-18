@@ -9,7 +9,7 @@
     <a mat-list-item *ngFor="let tab of getTabs(); let i = index" [ngClass]="{'active-link': tab.id === tabSelected}"
        (click)="swipeTab(tab.id)">
       <mat-icon mat-list-icon>{{ tab.iconName }}</mat-icon>
-      <span md-line>{{ ('labels.' + tabKeys[i]) | translate }}</span>
+      <span md-line>{{ ('labels.' + getTranslationTabKeys()[i]) | translate }}</span>
     </a>
   </mat-nav-list>
 </div>

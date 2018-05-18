@@ -7,8 +7,7 @@ describe('StickySidebarPresComponent', () => {
   let fixture: ComponentFixture<StickySidebarPresComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule(getTestingModuleConfig())
-      .compileComponents();
+    TestBed.configureTestingModule(getTestingModuleConfig()).compileComponents();
   }));
 
   beforeEach(() => {
