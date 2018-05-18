@@ -1,6 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { getTestingModuleConfig } from '../../../helpers/tests.helper';
-
 import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {

@@ -18,6 +18,8 @@ import { DynamicHeaderModule } from '../components/modules/dynamic-header/dynami
 import { GoogleMapModule } from '../components/modules/google-map/google-map.module';
 import { StickySidebarModule } from '../components/modules/sticky-sidebar/sticky-sidebar.module';
 import { HomeModule } from '../components/pages/home/home.module';
+import { MonthsDurationModule } from '../pipes/months-duration/months-duration.module';
+import { CvModule } from '../services/cv/cv.module';
 import { ModalModule } from '../services/modal/modal.module';
 import { TabModule } from '../services/tab/tab.module';
 
@@ -32,6 +34,7 @@ export const getImports = () => ([
   ContactModule,
   CvCardModule,
   CvModalModule,
+  CvModule,
   CvSliderModule,
   DateRangeModule,
   DynamicHeaderModule,
@@ -40,6 +43,7 @@ export const getImports = () => ([
   EmployersModule,
   HomeModule,
   ModalModule,
+  MonthsDurationModule,
   OtherInfoModule,
   PersonalModule,
   ProjectsModule,

@@ -1,13 +1,11 @@
 import { inject, TestBed } from '@angular/core/testing';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
+import { getTestingModuleConfig } from '../../helpers/tests.helper';
 import { MonthsDurationPipe } from './months-duration.pipe';
 
 describe('MonthsDurationPipe', () => {
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [ TranslateModule.forRoot({}) ],
-      providers: [ TranslateService ]
-    });
+    TestBed.configureTestingModule(getTestingModuleConfig());
   });
 
   it('create an instance', inject([ TranslateService ], (translateService) => {
