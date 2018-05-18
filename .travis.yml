@@ -9,10 +9,9 @@ cache:
   - node_modules
 script:
   - npm run test:travis
-  - npm run build
+  - npm run build:prod
 deploy:
   provider: pages
-  skip_cleanup: true
   github_token: $GH_TOKEN
   local_dir: dist
   on:
