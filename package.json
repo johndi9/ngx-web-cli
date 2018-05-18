@@ -8,6 +8,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test --sourceMap=false",
+    "test:travis": "ng test --watch=false",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
