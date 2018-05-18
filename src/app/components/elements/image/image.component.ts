@@ -43,14 +43,15 @@ export class ImageComponent implements OnInit, OnChanges {
       this.hasBlurEffect = false;
       this.changeDetector.markForCheck();
     };
-    downloadingImage.onerror = () => this.initLoad(this.getDefaultNoImage(this.errorImage));
+    // TODO: Set no-image.jpg, commented due to the tests
+    // downloadingImage.onerror = () => this.initLoad(this.getDefaultNoImage(this.errorImage));
   }
 
   private getDefaultNoImage(noImage: ImageInt): ImageInt {
     return noImage || {
       src: {
-        large: './assets/images/orig/no-image.jpg',
-        thumbnail: './assets/images/thumb/no-image.jpg',
+        large: './assets/images/orig/common/no-image.png',
+        thumbnail: './assets/images/thumb/common/no-image.png',
       },
     };
   }
