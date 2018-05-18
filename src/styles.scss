@@ -1,6 +1,7 @@
 // Import bootstrap framework from node_modules
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 // Import bootstrap utilities
+@import 'assets/scss/utils/bootstrap-variables';
 @import '~bootstrap/scss/_functions.scss';
 @import '~bootstrap/scss/_variables.scss';
 @import '~bootstrap/scss/_mixins.scss';
