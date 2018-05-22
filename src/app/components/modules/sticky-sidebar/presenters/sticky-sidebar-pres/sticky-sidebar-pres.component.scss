@@ -1,9 +1,11 @@
 @import 'utils';
 
-$profile-pic-size: rem(90) !default;
-$profile-pic-overflow-y: 45px !default;
 $sidebar-container-overflow-y: 50px !default;
 $mat-menu-container-width: 250px !default;
+
+:host {
+  height: 100%;
+}
 
 .sidebar-container {
   @include mat-elevation(6);
@@ -19,12 +21,7 @@ $mat-menu-container-width: 250px !default;
 
   ::ng-deep {
     .profile-pic {
-      @include mat-elevation(2);
-      border-radius: 5px;
-      height: $profile-pic-size;
-      margin-left: calc(50% - #{$profile-pic-size} / 2);
-      margin-top: -$profile-pic-overflow-y;
-      width: $profile-pic-size;
+      @include profile-pic($profile-pic-size);
     }
   }
 }

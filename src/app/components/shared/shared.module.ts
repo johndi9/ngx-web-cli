@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MatTabsModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
@@ -20,6 +21,7 @@ import { ImageModule } from '../elements/image/image.module';
     MatChipsModule,
     MatCardModule,
     MatDialogModule,
+    MatTabsModule
   ],
   declarations: [],
 })

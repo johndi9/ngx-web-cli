@@ -119,3 +119,12 @@
     }
   }
 }
+
+@mixin profile-pic($size) {
+  @include mat-elevation(2);
+  border-radius: 5px;
+  height: $size;
+  margin-left: calc(50% - #{$profile-pic-size} / 2);
+  margin-top: -$profile-pic-overflow-y;
+  width: $size;
+}

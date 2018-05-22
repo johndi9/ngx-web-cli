@@ -1,2 +1,4 @@
-<app-sticky-sidebar-pres [cv]="cvService.cv$ | async" [tabSelected]="tabSelected"
-                         (onTabSelected)="swipeTab($event)"></app-sticky-sidebar-pres>
+<app-sticky-sidebar-pres class="d-none d-md-block app-sticky-sidebar-pres" [cv]="cvService.cv$ | async"
+                         [tabSelected]="tabSelected" (onTabSelected)="swipeTab($event)"></app-sticky-sidebar-pres>
+<app-sticky-sidebar-small-pres class="d-block d-md-none" [cv]="cvService.cv$ | async" [tabSelected]="tabSelected"
+                               (onTabSelected)="swipeTab($event)"></app-sticky-sidebar-small-pres>

@@ -11,4 +11,16 @@
 .main-wrapper-limit {
   margin: 0 auto;
   max-width: $page-max-width;
+
+  @media ($mat-small-down) {
+    flex-direction: column;
+  }
+}
+
+.container-wrapper {
+  width: 75%;
+
+  @media ($mat-small-down) {
+    width: auto;
+  }
 }

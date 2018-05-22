@@ -1,3 +1,15 @@
-<p>
-  sticky-sidebar-small-pres works!
-</p>
+<div class="sidebar-container fade-slide-in delay250">
+  <div *ngIf="cv" class="d-flex align-items-center justify-content-center">
+    <app-image *ngIf="cv?.content?.info?.image"
+               [image]="getImage({url: cv.content.info.image, cssClass: 'profile-pic'})"></app-image>
+    <span class="name-wrapper">{{ cv?.content?.name }}</span>
+  </div>
+
+  <nav mat-tab-nav-bar aria-label="curriculum navigation links">
+    <a mat-tab-link *ngFor="let tab of getTabs(); let i = index" [ngClass]="{'active-link': tab.id === tabSelected}"
+       (click)="swipeTab(tab.id)">
+      <mat-icon mat-list-icon class="mr-3">{{ tab.iconName }}</mat-icon>
+      <span md-line>{{ ('labels.' + getTranslationTabKeys()[i]) | translate }}</span>
+    </a>
+  </nav>
+</div>
