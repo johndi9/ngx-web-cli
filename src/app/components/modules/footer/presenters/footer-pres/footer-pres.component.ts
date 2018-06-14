@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-footer-pres',
@@ -6,11 +6,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   styleUrls: [ './footer-pres.component.scss' ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FooterPresComponent implements OnInit {
+export class FooterPresComponent {
+  @Input() name: string;
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  private today: number = Date.now();
 }
