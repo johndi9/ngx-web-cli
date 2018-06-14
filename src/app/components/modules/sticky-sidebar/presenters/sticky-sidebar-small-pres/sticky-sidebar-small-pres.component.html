@@ -6,7 +6,7 @@
   </div>
 
   <nav mat-tab-nav-bar aria-label="curriculum navigation links">
-    <a mat-tab-link *ngFor="let tab of getTabs(); let i = index" [ngClass]="{'active-link': tab.id === tabSelected.id}"
+    <a mat-tab-link *ngFor="let tab of getTabs(); let i = index" [ngClass]="{'active-link': tab.id === tabSelected?.id}"
        (click)="swipeTab(tab.id)">
       <mat-icon mat-list-icon>{{ tab.iconName }}</mat-icon>
     </a>

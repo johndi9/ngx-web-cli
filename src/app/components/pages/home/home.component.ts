@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   private dialogRef: MatDialogRef<CvModalContComponent>;
   private subscriptions: Subscription[] = [];
 
-  constructor(private cvService: CvService, public tabService: TabService, public modalService: ModalService,
+  constructor(public cvService: CvService, public tabService: TabService, public modalService: ModalService,
               public dialog: MatDialog, private router: Router, private element: ElementRef) { }
 
   ngOnInit() {

@@ -15,6 +15,7 @@ import { ProjectsModule } from '../components/modules/cv-sections/projects/proje
 import { CvSliderModule } from '../components/modules/cv-slider/cv-slider.module';
 import { DateRangeModule } from '../components/modules/date-range/date-range.module';
 import { DynamicHeaderModule } from '../components/modules/dynamic-header/dynamic-header.module';
+import { FooterModule } from '../components/modules/footer/footer.module';
 import { GoogleMapModule } from '../components/modules/google-map/google-map.module';
 import { StickySidebarModule } from '../components/modules/sticky-sidebar/sticky-sidebar.module';
 import { HomeModule } from '../components/pages/home/home.module';
@@ -41,6 +42,7 @@ export const getImports = () => ([
   GoogleMapModule,
   EducationModule,
   EmployersModule,
+  FooterModule,
   HomeModule,
   ModalModule,
   MonthsDurationModule,

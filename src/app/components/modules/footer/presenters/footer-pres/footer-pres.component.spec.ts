@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { getTestingModuleConfig } from '../../../../../helpers/tests.helper';
 
 import { FooterPresComponent } from './footer-pres.component';
 
@@ -7,10 +8,7 @@ describe('FooterPresComponent', () => {
   let fixture: ComponentFixture<FooterPresComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ FooterPresComponent ]
-    })
-      .compileComponents();
+    TestBed.configureTestingModule(getTestingModuleConfig()).compileComponents();
   }));
 
   beforeEach(() => {
