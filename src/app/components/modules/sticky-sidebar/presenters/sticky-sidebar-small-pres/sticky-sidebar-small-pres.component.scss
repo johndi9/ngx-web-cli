@@ -1,5 +1,7 @@
 @import 'utils';
 
+$tab-min-width: 180px !default;
+
 :host {
   left: 0;
   height: 100%;
@@ -26,6 +28,12 @@
 
 .mat-tab-nav-bar {
   overflow-x: scroll;
+}
+
+.mat-tab-link {
+  @media ($mat-small-up) {
+    min-width: $tab-min-width;
+  }
 }
 
 .active-link {
