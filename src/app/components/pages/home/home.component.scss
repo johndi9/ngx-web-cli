@@ -17,6 +17,12 @@
   }
 }
 
+.sidebar-wrapper {
+  @media ($mat-small-down) {
+    height: $header-height-overflow-xs-down;
+  }
+}
+
 .container-wrapper {
   width: 75%;
 

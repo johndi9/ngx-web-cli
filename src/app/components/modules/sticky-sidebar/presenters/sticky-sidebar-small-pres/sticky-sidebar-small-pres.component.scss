@@ -4,6 +4,7 @@
   left: 0;
   height: 100%;
   position: absolute;
+  width: 100vw;
 }
 
 .sidebar-container {
@@ -17,6 +18,14 @@
       @include profile-pic($profile-pic-size-small);
     }
   }
+}
+
+.sidebar-row-1 {
+  background: $bg-base;
+}
+
+.mat-tab-nav-bar {
+  overflow-x: scroll;
 }
 
 .active-link {

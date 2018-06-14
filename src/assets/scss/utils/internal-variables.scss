@@ -18,6 +18,7 @@ $total-delays: 50;
 $interval-delay: 25;
 
 // Header
+$header-height-overflow-xs-down: 50px;
 $header-height-xs-down: 130px;
 $header-height-xs-up: 90px;
 
@@ -29,7 +30,7 @@ $video-bg-height: 50vh;
 
 // Profile picture
 $profile-pic-size: 90px !default;
-$profile-pic-size-small: 50px !default;
+$profile-pic-size-small: 40px !default;
 $profile-pic-overflow-y: 45px !default;
 
 // Company logos

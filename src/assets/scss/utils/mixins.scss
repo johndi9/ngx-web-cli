@@ -127,4 +127,11 @@
   margin-left: calc(50% - #{$profile-pic-size} / 2);
   margin-top: -$profile-pic-overflow-y;
   width: $size;
+
+  @media ($mat-small-down) {
+    border-radius: 50%;
+    height: $profile-pic-size-small;
+    margin-top: 0;
+    width: $profile-pic-size-small;
+  }
 }
