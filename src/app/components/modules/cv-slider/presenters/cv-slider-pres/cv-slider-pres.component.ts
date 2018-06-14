@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { TAB_OPTIONS } from '../../../../../enum/tab/tab-options.enum';
 import { CurriculumInt } from '../../../../../interfaces/cv/curriculum.int';
+import { TabStateInt } from '../../../../../interfaces/tab/tab-state.int';
 import { XhrStateInt } from '../../../../../interfaces/xhr-state/xhr-state.int';
 
 @Component({
@@ -12,15 +13,9 @@ import { XhrStateInt } from '../../../../../interfaces/xhr-state/xhr-state.int';
 export class CvSliderPresComponent {
   @Output() onTabSelected: EventEmitter<TAB_OPTIONS> = new EventEmitter<TAB_OPTIONS>();
   @Input() cv: XhrStateInt<CurriculumInt>;
-  @Input() tabSelected: TAB_OPTIONS;
-
-  constructor(private element: ElementRef) {}
+  @Input() tabSelected: TabStateInt<TAB_OPTIONS>;
 
   swipeTab(tab: TAB_OPTIONS) {
     this.onTabSelected.emit(tab);
-  }
-
-  getCurrentTabHeight(tab: TAB_OPTIONS) {
-    return (this.element.nativeElement.querySelectorAll('.swiper-slide-inner')[ tab ] || {}).scrollHeight;
   }
 }

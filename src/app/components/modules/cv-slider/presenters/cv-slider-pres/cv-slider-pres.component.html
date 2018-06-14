@@ -1,6 +1,6 @@
 <div class="cv-slider-wrapper">
-  <swiper [(index)]="tabSelected" (indexChange)="swipeTab($event)" class="swiper-container fade-slide-in delay350"
-          [style.height.px]="getCurrentTabHeight(tabSelected)">
+  <swiper [(index)]="tabSelected.id" (indexChange)="swipeTab($event)" class="swiper-container fade-slide-in delay350"
+          [style.height.px]="tabSelected.height">
     <div class="swiper-slide">
       <div class="swiper-slide-inner pb-3">
         <app-personal-cont [info]="cv?.content?.info" [skillSets]="cv?.content?.skills?.sets"

@@ -3,6 +3,7 @@ import { TAB_OPTIONS } from '../../../../../enum/tab/tab-options.enum';
 import { getImage } from '../../../../../helpers/image.helper';
 import { getTabs, getTranslationTabKeys } from '../../../../../helpers/tab.helper';
 import { CurriculumInt } from '../../../../../interfaces/cv/curriculum.int';
+import { TabStateInt } from '../../../../../interfaces/tab/tab-state.int';
 import { XhrStateInt } from '../../../../../interfaces/xhr-state/xhr-state.int';
 
 @Component({
@@ -14,7 +15,7 @@ import { XhrStateInt } from '../../../../../interfaces/xhr-state/xhr-state.int';
 export class StickySidebarSmallPresComponent {
   @Output() onTabSelected: EventEmitter<TAB_OPTIONS> = new EventEmitter<TAB_OPTIONS>();
   @Input() cv: XhrStateInt<CurriculumInt>;
-  @Input() tabSelected: TAB_OPTIONS;
+  @Input() tabSelected: TabStateInt<TAB_OPTIONS>;
 
   getImage = getImage;
   getTabs = getTabs;

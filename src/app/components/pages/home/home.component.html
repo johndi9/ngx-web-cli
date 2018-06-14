@@ -3,11 +3,11 @@
 </div>
 <div class="main-wrapper">
   <div class="d-flex main-wrapper-limit">
-    <div class="p-2 sidebar-wrapper mb-5">
-      <app-sticky-sidebar-cont [tabSelected]="TAB_OPTIONS[(tabService?.tab$ | async)?.id]"></app-sticky-sidebar-cont>
+    <div class="px-2 sidebar-wrapper mb-5">
+      <app-sticky-sidebar-cont [tabSelected]="tabService?.tab$ | async"></app-sticky-sidebar-cont>
     </div>
     <div class="p-2 container-wrapper flex-grow-1">
-      <app-cv-slider-cont [tabSelected]="TAB_OPTIONS[(tabService?.tab$ | async)?.id]"></app-cv-slider-cont>
+      <app-cv-slider-cont [tabSelected]="tabService?.tab$ | async"></app-cv-slider-cont>
     </div>
   </div>
 </div>

@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { TAB_OPTIONS } from '../../../../../enum/tab/tab-options.enum';
 import { navigateFromTab } from '../../../../../helpers/router.helper';
+import { TabStateInt } from '../../../../../interfaces/tab/tab-state.int';
 import { CvService } from '../../../../../services/cv/cv.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { CvService } from '../../../../../services/cv/cv.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StickySidebarContComponent {
-  @Input() tabSelected: TAB_OPTIONS;
+  @Input() tabSelected: TabStateInt<TAB_OPTIONS>;
 
   constructor(public cvService: CvService, private router: Router) {}
 
