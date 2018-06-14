@@ -3,11 +3,11 @@
 .card-wrapper {
   width: calc(100% / 3);
 
-  @media ($mat-medium-down) and ($mat-small-up) {
+  @media ($mat-medium-down) and ($mat-xsmall-up) {
     width: 50%;
   }
 
-  @media ($mat-small-down) {
+  @media ($mat-xsmall-down) {
     width: 100%;
   }
 }
