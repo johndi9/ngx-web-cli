@@ -1,10 +1,5 @@
-<footer class="d-flex align-items-center justify-content-center p-3"
-        role="contentinfo">
-  <h2 class="sr-only">Footer</h2>
-
-  <ng-template [ngIf]="name">
-    <span>{{ name }}</span>
-    <mat-icon>copyright</mat-icon>
-    <span>{{ today | date:'y' }}</span>
-  </ng-template>
+<footer *ngIf="name" class="d-flex align-items-center justify-content-center p-3" role="contentinfo">
+  <span>{{ name }}</span>
+  <mat-icon>copyright</mat-icon>
+  <span>{{ today | date:'y' }}</span>
 </footer>
