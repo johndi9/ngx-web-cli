@@ -1,6 +1,6 @@
 @import 'utils';
 
-$tab-min-width: 180px !default;
+$tab-min-width: 72px !default;
 
 :host {
   left: 0;
@@ -28,12 +28,14 @@ $tab-min-width: 180px !default;
 
 .mat-tab-nav-bar {
   overflow-x: scroll;
+
+  ::ng-deep .mat-tab-links {
+    justify-content: center;
+  }
 }
 
 .mat-tab-link {
-  @media ($mat-small-up) {
-    min-width: $tab-min-width;
-  }
+  min-width: $tab-min-width;
 }
 
 .active-link {
