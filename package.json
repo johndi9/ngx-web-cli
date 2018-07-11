@@ -29,6 +29,7 @@
     "@angular/material": "^6.0.0",
     "@angular/platform-browser": "^6.0.0",
     "@angular/platform-browser-dynamic": "^6.0.0",
+    "@angular/pwa": "^0.6.8",
     "@angular/router": "^6.0.0",
     "@ngrx/effects": "^5.2.0",
     "@ngrx/store": "^5.2.0",
@@ -44,7 +45,8 @@
     "ramda": "^0.25.0",
     "rxjs": "6",
     "rxjs-compat": "6",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "@angular/service-worker": "^6.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.1",

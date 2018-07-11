@@ -16,6 +16,7 @@ import { SharedModule } from './components/shared/shared.module';
 import { CustomReuseStrategy } from './reuse-strategy';
 import { reducers, State } from './state';
 import { CurriculumEffects } from './state/cv/cv.effect';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 export const metaReducers: MetaReducer<State>[] = !environment.production ? [ storeFreeze ] : [];
 
@@ -49,7 +50,8 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [ HttpClient ]
       }
     }),
-    SharedModule
+    SharedModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: CustomReuseStrategy }
