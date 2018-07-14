@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import {path} from 'ramda/es/path';
+import path from 'ramda/es/path';
 import { ImageEnum } from '../../../enum/image/image.enum';
 import { ImageInt } from '../../../interfaces/image/image.int';
 
