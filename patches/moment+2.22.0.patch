@@ -1,0 +1,23 @@
+patch-package
+--- a/node_modules/moment/moment.js
++++ b/node_modules/moment/moment.js
+@@ -1832,7 +1832,7 @@
+                 module && module.exports) {
+             try {
+                 oldLocale = globalLocale._abbr;
+-                var aliasedRequire = require;
++                var aliasedRequire = eval('require');
+                 aliasedRequire('./locale/' + name);
+                 getSetGlobalLocale(oldLocale);
+             } catch (e) {}
+--- a/node_modules/moment/src/lib/locale/locales.js
++++ b/node_modules/moment/src/lib/locale/locales.js
+@@ -52,7 +52,7 @@ function loadLocale(name) {
+             module && module.exports) {
+         try {
+             oldLocale = globalLocale._abbr;
+-            var aliasedRequire = require;
++            var aliasedRequire = eval('require');
+             aliasedRequire('./locale/' + name);
+             getSetGlobalLocale(oldLocale);
+         } catch (e) {}
