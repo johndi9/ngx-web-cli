@@ -17,6 +17,7 @@ import { CustomReuseStrategy } from './reuse-strategy';
 import { reducers, State } from './state';
 import { CurriculumEffects } from './state/cv/cv.effect';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { NgDeferLoadDirective } from './directives/ng-defer-load/ng-defer-load.directive';
 
 export const metaReducers: MetaReducer<State>[] = !environment.production ? [ storeFreeze ] : [];
 
@@ -26,7 +27,8 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NgDeferLoadDirective
   ],
   imports: [
     BrowserModule,
