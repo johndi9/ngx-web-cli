@@ -14,6 +14,7 @@ export class CvCardPresComponent {
   @Input() thumbImg: string;
 
   getImage = getImage;
+  showMyElement = false;
 
   openModal(id: number) {
     this.openModalId.emit(id);

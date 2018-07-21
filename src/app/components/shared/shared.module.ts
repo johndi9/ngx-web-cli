@@ -8,12 +8,14 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { TranslateModule } from '@ngx-translate/core';
+import { DeferLoadModule } from '@trademe/ng-defer-load';
 import { ImageModule } from '../elements/image/image.module';
 
 @NgModule({
   exports: [
     CommonModule,
     TranslateModule,
+    DeferLoadModule,
     ImageModule,
     MatButtonModule,
     MatIconModule,

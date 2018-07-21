@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PreloadAllModules, RouteReuseStrategy, RouterModule } from '@angular/router';
+import { ServiceWorkerModule } from '@angular/service-worker';
 import { EffectsModule } from '@ngrx/effects';
 import { MetaReducer, StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -16,8 +17,6 @@ import { SharedModule } from './components/shared/shared.module';
 import { CustomReuseStrategy } from './reuse-strategy';
 import { reducers, State } from './state';
 import { CurriculumEffects } from './state/cv/cv.effect';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { NgDeferLoadDirective } from './directives/ng-defer-load/ng-defer-load.directive';
 
 export const metaReducers: MetaReducer<State>[] = !environment.production ? [ storeFreeze ] : [];
 
@@ -27,8 +26,7 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NgDeferLoadDirective
+    AppComponent
   ],
   imports: [
     BrowserModule,
