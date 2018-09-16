@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, ElementRef, OnDestroy, OnInit } fro
 import { MatDialog } from '@angular/material';
 import { MatDialogRef } from '@angular/material/dialog/typings/dialog-ref';
 import { NavigationStart, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/Subscription';
 import { TAB_OPTIONS } from '../../../enum/tab/tab-options.enum';
 import { getHomeStateFromUrl } from '../../../helpers/url.helper';
 import { CvService } from '../../../services/cv/cv.service';

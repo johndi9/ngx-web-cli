@@ -1,6 +1,6 @@
 import { OnDestroy, Pipe, PipeTransform } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/Subscription';
 
 @Pipe({
   name: 'monthsDuration'
