@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { TAB_OPTIONS } from '../../../../../enum/tab/tab-options.enum';
+import { stopEventPropagation } from '../../../../../helpers/event.helper';
 import { getImage } from '../../../../../helpers/image.helper';
 import { getTabs, getTranslationTabKeys } from '../../../../../helpers/tab.helper';
 import { CurriculumInt } from '../../../../../interfaces/cv/curriculum.int';
@@ -30,7 +31,8 @@ export class StickySidebarSmallPresComponent implements OnChanges {
     }
   }
 
-  swipeTab(tab: TAB_OPTIONS) {
+  swipeTab(event: MouseEvent, tab: TAB_OPTIONS) {
+    stopEventPropagation(event);
     this.onTabSelected.emit(tab);
   }
 }
