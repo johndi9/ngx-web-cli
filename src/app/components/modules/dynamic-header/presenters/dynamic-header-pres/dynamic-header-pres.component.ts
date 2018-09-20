@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-dynamic-header-pres',
@@ -6,12 +6,13 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
   styleUrls: [ './dynamic-header-pres.component.scss' ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DynamicHeaderPresComponent implements OnInit {
+export class DynamicHeaderPresComponent implements AfterViewInit {
   @Input() videoPath: string;
 
   constructor() { }
 
-  ngOnInit() {
+  ngAfterViewInit() {
+    document.getElementById('vid').play();
   }
 
 }
