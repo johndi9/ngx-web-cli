@@ -7,8 +7,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GoogleMapPresComponent implements OnInit {
-  lat = 51.678418;
-  lng = 7.809007;
+  lat = 40.475703;
+  lng = -3.687738;
 
   constructor() { }
 
