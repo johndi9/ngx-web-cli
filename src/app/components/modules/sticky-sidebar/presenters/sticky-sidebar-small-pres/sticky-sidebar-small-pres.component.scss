@@ -27,8 +27,6 @@ $tab-min-width: 72px !default;
 }
 
 .mat-tab-nav-bar {
-  overflow-x: scroll;
-
   ::ng-deep .mat-tab-links {
     justify-content: center;
   }

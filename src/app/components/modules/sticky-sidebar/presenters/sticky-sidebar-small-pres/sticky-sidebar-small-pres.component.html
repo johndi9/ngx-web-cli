@@ -1,13 +1,13 @@
 <div class="sidebar-container fade-slide-in delay250">
   <div *ngIf="cv" class="sidebar-row-1 d-flex align-items-center justify-content-center py-1">
     <app-image *ngIf="cv?.content?.info?.image"
-               [image]="getImage({url: cv.content.info.image, cssClass: 'profile-pic'})"></app-image>
+      [image]="getImage({url: cv.content.info.image, cssClass: 'profile-pic'})"></app-image>
     <span class="name-wrapper">{{ cv?.content?.name }}</span>
   </div>
 
-  <nav mat-tab-nav-bar aria-label="curriculum navigation links">
-    <a mat-tab-link *ngFor="let tab of getTabs(); let i = index" [ngClass]="{'active-link': tab.id === tabSelected?.id}"
-       (click)="swipeTab($event, tab.id)">
+  <nav mat-tab-nav-bar>
+    <a *ngFor="let tab of getTabs()" (click)="swipeTab($event, tab.id)"
+      class="mat-tab-link" [ngClass]="{'active-link': tab.id === tabSelected?.id}">
       <mat-icon mat-list-icon>{{ tab.iconName }}</mat-icon>
     </a>
   </nav>
