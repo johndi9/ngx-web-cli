@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { TAB_OPTIONS } from '../../../../../enum/tab/tab-options.enum';
 import { stopEventPropagation } from '../../../../../helpers/event.helper';
 import { getImage } from '../../../../../helpers/image.helper';
-import { getTabs, getTranslationTabKeys } from '../../../../../helpers/tab.helper';
+import { getTabs } from '../../../../../helpers/tab.helper';
 import { CurriculumInt } from '../../../../../interfaces/cv/curriculum.int';
 import { TabStateInt } from '../../../../../interfaces/tab/tab-state.int';
 import { XhrStateInt } from '../../../../../interfaces/xhr-state/xhr-state.int';
@@ -13,23 +13,13 @@ import { XhrStateInt } from '../../../../../interfaces/xhr-state/xhr-state.int';
   styleUrls: [ './sticky-sidebar-small-pres.component.scss' ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class StickySidebarSmallPresComponent implements OnChanges {
+export class StickySidebarSmallPresComponent {
   @Output() onTabSelected: EventEmitter<TAB_OPTIONS> = new EventEmitter<TAB_OPTIONS>();
   @Input() cv: XhrStateInt<CurriculumInt>;
   @Input() tabSelected: TabStateInt<TAB_OPTIONS>;
 
-  @HostBinding('style.height.px') height = null;
-
   getImage = getImage;
   getTabs = getTabs;
-  getTranslationTabKeys = getTranslationTabKeys;
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes[ 'tabSelected' ] && changes[ 'tabSelected' ].currentValue && changes[ 'tabSelected' ].previousValue &&
-      changes[ 'tabSelected' ].currentValue.height !== changes[ 'tabSelected' ].previousValue.height) {
-      this.height = this.tabSelected.height;
-    }
-  }
 
   swipeTab(event: MouseEvent, tab: TAB_OPTIONS) {
     stopEventPropagation(event);
