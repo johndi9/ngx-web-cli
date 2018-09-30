@@ -26,11 +26,14 @@ $mat-menu-container-width: 250px !default;
   }
 }
 
+.sidebar-container-top {
+  text-align: center;
+}
+
 .name-wrapper {
   display: block;
   font-size: rem(25);
   padding: rem(20) rem(10);
-  text-align: center;
 }
 
 .active-link {
