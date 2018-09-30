@@ -22,7 +22,7 @@
   "repository": "https://github.com/johndi9/ngx-web-cli.git",
   "author": "Juan Diego <johndi9@hotmail.com>",
   "dependencies": {
-    "@agm/core": "^1.0.0-beta.3",
+    "@agm/core": "^1.0.0-beta.5",
     "@angular/animations": "^6.1.8",
     "@angular/cdk": "^6.4.7",
     "@angular/common": "^6.1.8",
@@ -33,7 +33,7 @@
     "@angular/material": "^6.4.7",
     "@angular/platform-browser": "^6.1.8",
     "@angular/platform-browser-dynamic": "^6.1.8",
-    "@angular/pwa": "^0.6.8",
+    "@angular/pwa": "^0.8.3",
     "@angular/router": "^6.1.8",
     "@angular/service-worker": "^6.1.8",
     "@ngrx/effects": "^6.0.1",
@@ -47,25 +47,25 @@
     "material-design-icons": "^3.0.1",
     "moment": "2.22.0",
     "ngx-moment": "^3.1.0",
-    "ngx-swiper-wrapper": "^6.3.0",
+    "ngx-swiper-wrapper": "^6.4.0",
     "ramda": "^0.25.0",
     "rxjs": "6.3.2",
     "rxjs-compat": "6.2.2",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "0.7.1",
+    "@angular-devkit/build-angular": "0.8.3",
     "@angular/cli": "^6.2.3",
     "@angular/compiler-cli": "^6.1.8",
     "@angular/language-service": "^6.1.8",
     "@ngrx/schematics": "^6.0.1",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "~10.5.2",
+    "@types/node": "~10.11.3",
     "codelyzer": "~4.4.2",
     "jasmine-core": "~3.1.0",
     "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~2.0.4",
+    "karma": "~3.0.0",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
@@ -78,6 +78,6 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.10.0",
     "typescript": "~2.9.2",
-    "webpack-bundle-analyzer": "^2.13.1"
+    "webpack-bundle-analyzer": "^3.0.2"
   }
 }
