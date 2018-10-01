@@ -4,7 +4,7 @@
                [image]="getImage({url: cv.content.info.image, cssClass: 'profile-pic'})"></app-image>
     <span class="name-wrapper">{{ cv?.content?.name }}</span>
     <mat-chip class="date-wrapper" color="accent" selected>
-      {{ 'labels.cvUpdate' | translate }} {{ cv?.content?.lastUpdate | date: 'mediumDate' }}
+      {{ 'labels.cvUpdate' | translate }} {{ cv?.content?.lastUpdate | date: 'MMM y' }}
     </mat-chip>
   </div>
 
