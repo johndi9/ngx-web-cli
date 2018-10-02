@@ -16,7 +16,7 @@
 
   <div class="social-wrapper">
     <div *ngFor="let soc of social" class="separator">
-      <i class="fa fa-{{ soc?.icon }} contact-icon" aria-hidden="true"></i>
+      <div class="contact-icon" [inlineSVG]="'/assets/svg/' + soc?.icon + '.svg'"></div>
       <a mat-button class="social-link" href="{{ soc?.url }}" target="_blank">{{ soc?.url }}</a>
     </div>
   </div>
