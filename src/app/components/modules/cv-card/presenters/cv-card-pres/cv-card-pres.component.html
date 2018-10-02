@@ -1,5 +1,5 @@
-<div class="card-container p-2" (click)="openModal(id)" (deferLoad)="showMyElement = true">
-  <mat-card class="pt-0">
+<div class="card-container p-2" (deferLoad)="showMyElement = true">
+  <mat-card (click)="openModal(id)" class="pt-0">
     <mat-card-header class="align-items-center py-3">
       <div mat-card-avatar>
         <ng-container *ngIf="showMyElement">
