@@ -3,11 +3,6 @@
 @include sub-heading-styles;
 @include shared-common-styles;
 
-.map {
-  height: $google-maps-height;
-  margin: 0 -10px;
-}
-
 .contact-wrapper,
 .social-wrapper {
   font-size: 1.3rem;

@@ -1,4 +1,3 @@
-import { AgmCoreModule } from '@agm/core';
 import { APP_BASE_HREF, CommonModule } from '@angular/common';
 import { MAT_DIALOG_DATA } from '@angular/material';
 import { RouterModule } from '@angular/router';
@@ -16,7 +15,6 @@ import { CvSliderModule } from '../components/modules/cv-slider/cv-slider.module
 import { DateRangeModule } from '../components/modules/date-range/date-range.module';
 import { DynamicHeaderModule } from '../components/modules/dynamic-header/dynamic-header.module';
 import { FooterModule } from '../components/modules/footer/footer.module';
-import { GoogleMapModule } from '../components/modules/google-map/google-map.module';
 import { StickySidebarModule } from '../components/modules/sticky-sidebar/sticky-sidebar.module';
 import { HomeModule } from '../components/pages/home/home.module';
 import { MonthsDurationModule } from '../pipes/months-duration/months-duration.module';
@@ -30,7 +28,6 @@ export const getTestingModuleConfig = () => ({
 });
 
 export const getImports = () => ([
-  AgmCoreModule.forRoot({}),
   CommonModule,
   ContactModule,
   CvCardModule,
@@ -39,7 +36,6 @@ export const getImports = () => ([
   CvSliderModule,
   DateRangeModule,
   DynamicHeaderModule,
-  GoogleMapModule,
   EducationModule,
   EmployersModule,
   FooterModule,
