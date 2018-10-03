@@ -26,12 +26,12 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.cvService.loadCurriculum();
-    this.updateStateFromUrl(this.router.url);
+    this.updateStateFromUrl(this.router.url, false);
     this.subscriptions.push(
       this.modalService.modal$.subscribe(modal =>
         Promise.resolve(null).then(() => this.manageModal(modal.id, this.router.url))),
       this.router.events.subscribe((nav) => {
-        if (nav instanceof NavigationStart) { this.updateStateFromUrl(nav.url); }
+        if (nav instanceof NavigationStart) { this.updateStateFromUrl(nav.url, true); }
       })
     );
   }
@@ -40,10 +40,17 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
 
-  private updateStateFromUrl(url: string): void {
+  private updateStateFromUrl(url: string, storeHeight: boolean): void {
     const { tab, modal } = getHomeStateFromUrl(url);
-    this.tabService.selectTab({ id: TAB_OPTIONS[ tab ] as any });
+    this.tabService.selectTab({
+      id: TAB_OPTIONS[ tab ] as any,
+      height: storeHeight ? this.getCurrentTabHeight(TAB_OPTIONS[ tab ] as any) : null
+    });
     this.modalService.openModal(modal);
+  }
+
+  private getCurrentTabHeight(tab: number) {
+    return (this.element.nativeElement.querySelectorAll('.swiper-slide-inner')[ tab ] || {}).scrollHeight;
   }
 
   private manageModal(id: number, url: string): void {

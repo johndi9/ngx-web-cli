@@ -4,7 +4,7 @@ $tab-min-width: 72px !default;
 
 :host {
   left: 0;
-  height: calc(100% + 100vh);
+  height: 100%;
   position: absolute;
   width: 100vw;
 }

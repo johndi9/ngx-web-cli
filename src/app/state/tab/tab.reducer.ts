@@ -5,13 +5,13 @@ import { TabActions } from './tab.actions';
 
 
 export function getDefaultState(): TabStateInt<TAB_OPTIONS> {
-  return { id: TAB_OPTIONS.PERSONAL_INFO };
+  return { id: TAB_OPTIONS.PERSONAL_INFO, height: 0 };
 }
 
 export function reducer(state: TabStateInt<TAB_OPTIONS> = getDefaultState(), action: TabActions): TabStateInt<TAB_OPTIONS> {
   switch (action.type) {
     case TabActionTypes.SELECT_TAB: {
-      return { ...state, id: action.payload.id };
+      return { ...state, id: action.payload.id, height: action.payload.height };
     }
 
     default: { return state; }
