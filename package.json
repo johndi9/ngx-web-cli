@@ -13,7 +13,7 @@
     "postinstall": "patch-package --use-yarn",
     "test": "ng test --sourceMap=false",
     "test:travis": "ng test --watch=false",
-    "img-resize": "./tools/img-resize.sh",
+    "img-automation": "./img-automation.sh",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
