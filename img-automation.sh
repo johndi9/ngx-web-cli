@@ -10,3 +10,5 @@
 imgFolder=./src/assets/images/
 find $imgFolder -name "*.png" -exec convert {} -quality 80 {}.webp \;
 find $imgFolder -name "*.webp" -exec rename -f 's/\.png//g' {} +
+find $imgFolder -name "*.jpg" -exec convert {} -quality 80 {}.webp \;
+find $imgFolder -name "*.webp" -exec rename -f 's/\.jpg//g' {} +
