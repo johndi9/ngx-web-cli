@@ -1,3 +1,5 @@
+import { ImageUrlInt } from '../../image/image.int';
+
 export interface SpeakingInt {
   title: string;
   role: string;
@@ -5,6 +7,6 @@ export interface SpeakingInt {
   location: string;
   date: Date;
   url: string;
-  logo: string;
+  logo: ImageUrlInt;
   highlights: string[];
 }

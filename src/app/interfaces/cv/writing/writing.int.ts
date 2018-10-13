@@ -1,3 +1,4 @@
+import { ImageUrlInt } from '../../image/image.int';
 import { PublisherInt } from './publisher/publisher.int';
 
 export interface WritingInt {
@@ -6,7 +7,7 @@ export interface WritingInt {
   date: Date;
   publisher: PublisherInt;
   url: string;
-  logo: string;
+  logo: ImageUrlInt;
   author: string[];
   summary: string;
 }

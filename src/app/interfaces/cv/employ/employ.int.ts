@@ -1,10 +1,12 @@
+import { ImageUrlInt } from '../../image/image.int';
+
 export interface EmployInt {
   id: number;
   employer: string;
   location: string;
   url: number;
   download: number;
-  logo: string;
+  logo: ImageUrlInt;
   backgroundColor: string;
   color: string;
   position: number;

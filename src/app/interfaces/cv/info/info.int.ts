@@ -1,6 +1,8 @@
+import { ImageUrlInt } from '../../image/image.int';
+
 export interface InfoInt {
   label: string;
   brief: string;
-  image: string;
+  image: ImageUrlInt;
   quote: string;
 }

@@ -1,3 +1,5 @@
+import { ImageUrlInt } from '../../image/image.int';
+
 export interface ProjectInt {
   id: number;
   employerId: number;
@@ -6,7 +8,7 @@ export interface ProjectInt {
   role: string;
   url: string;
   download: string;
-  logo: string;
+  logo: ImageUrlInt;
   backgroundColor: string;
   color: string;
   start: Date;

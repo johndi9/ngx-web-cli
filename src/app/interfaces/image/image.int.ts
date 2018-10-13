@@ -2,7 +2,12 @@ export interface ImageInt {
   alt?: string;
   cssClass?: string;
   src: {
-    large: string;
-    thumbnail?: string;
+    large: ImageUrlInt;
+    thumbnail?: ImageUrlInt;
   };
+}
+
+export interface ImageUrlInt {
+  path: string;
+  format: string;
 }
