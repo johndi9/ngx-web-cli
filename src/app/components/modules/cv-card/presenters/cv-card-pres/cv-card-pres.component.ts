@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { getImage } from '../../../../../helpers/image.helper';
+import { ImageUrlInt } from '../../../../../interfaces/image/image.int';
 
 @Component({
   selector: 'app-cv-card-pres',
@@ -11,7 +12,7 @@ export class CvCardPresComponent {
   @Output() openModalId: EventEmitter<number> = new EventEmitter<number>();
   @Input() id: number;
   @Input() title: string;
-  @Input() thumbImg: string;
+  @Input() thumbImg: ImageUrlInt;
 
   getImage = getImage;
   showMyElement = false;

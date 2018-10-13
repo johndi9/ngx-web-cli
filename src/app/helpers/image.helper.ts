@@ -1,7 +1,16 @@
-import { ImageInt } from '../interfaces/image/image.int';
+import { ImageInt, ImageUrlInt } from '../interfaces/image/image.int';
 
-export const getImage = ({ url, cssClass }) =>
+export const getImage = ({ img, cssClass }: { img: ImageUrlInt, cssClass: {} }) =>
   ({
-    src: { large: `/assets/images/orig/${url}`, thumbnail: `/assets/images/thumb/${url}` },
+    src: {
+      large: {
+        path: `/assets/images/orig/${img.path}`,
+        format: img.format,
+      },
+      thumbnail: {
+        path: `/assets/images/thumb/${img.path}`,
+        format: img.format,
+      },
+    },
     ...(cssClass ? { cssClass } : {})
   }) as ImageInt;

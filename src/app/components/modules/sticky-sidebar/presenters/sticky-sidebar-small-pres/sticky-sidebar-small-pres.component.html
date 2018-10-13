@@ -1,7 +1,7 @@
 <div class="sidebar-container fade-slide-in delay250">
   <div *ngIf="cv" class="sidebar-row-1 d-flex align-items-center justify-content-center py-1">
     <app-image *ngIf="cv?.content?.info?.image" class="mr-3"
-      [image]="getImage({url: cv.content.info.image, cssClass: 'profile-pic'})"></app-image>
+      [image]="getImage({img: cv.content.info.image, cssClass: 'profile-pic'})"></app-image>
     <span class="name-wrapper mr-3">{{ cv?.content?.name }}</span>
     <mat-chip class="date-wrapper" color="accent" selected>
       {{ cv?.content?.lastUpdate | date: 'MMM y' }}

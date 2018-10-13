@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { getParsedHomeUrl } from '../../../../../helpers/url.helper';
+import { ImageUrlInt } from '../../../../../interfaces/image/image.int';
 
 @Component({
   selector: 'app-cv-card-cont',
@@ -11,7 +12,7 @@ import { getParsedHomeUrl } from '../../../../../helpers/url.helper';
 export class CvCardContComponent {
   @Input() id: number;
   @Input() title: string;
-  @Input() thumbImg: string;
+  @Input() thumbImg: ImageUrlInt;
 
   constructor(private router: Router) {}
 

@@ -3,7 +3,7 @@
     <mat-card-header class="align-items-center py-3">
       <div mat-card-avatar>
         <ng-container *ngIf="showMyElement">
-          <app-image *ngIf="thumbImg; else noImg" [image]="getImage({url: thumbImg, cssClass: 'card-pic'})"></app-image>
+          <app-image *ngIf="thumbImg; else noImg" [image]="getImage({img: thumbImg, cssClass: 'card-pic'})"></app-image>
         </ng-container>
         <ng-template #noImg><mat-icon class="no-logo-icon">business</mat-icon></ng-template>
       </div>

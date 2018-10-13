@@ -1,1 +1,4 @@
-<img [ngClass]="{blur: hasBlurEffect}" [class]="image?.cssClass" [src]="currentSrc">
+<picture>
+  <source srcset="{{currentSrc.path + '.webp'}}" type="image/webp">
+  <img [ngClass]="{blur: hasBlurEffect}" [class]="image?.cssClass" src="{{currentSrc.path + '.' + currentSrc.format}}">
+</picture>
