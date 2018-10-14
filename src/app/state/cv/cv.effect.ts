@@ -13,7 +13,7 @@ export class CurriculumEffects {
   loadAvailabilities$: Observable<Action> = this._actions$.pipe(
     ofType<LoadCV>(CurriculumActionTypes.LOAD_CV),
     switchMap(() => {
-      const url = 'https://raw.githubusercontent.com/johndi9/PersonalCV/master/curriculum/en.json';
+      const url = './assets/json/en.json';
       return fetch(url).then(data => data.json())
         .then((cv: CurriculumInt) => new LoadCVSuccess(cv))
         .catch(error => new LoadCVFail(error));
