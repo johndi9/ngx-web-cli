@@ -12,10 +12,16 @@ export class DynamicHeaderPresComponent implements AfterViewInit {
   constructor() { }
 
   ngAfterViewInit() {
-    const promise = (document.getElementById('vid') as HTMLVideoElement).play();
+    const getVideo = () => (document.getElementById('vid') as HTMLVideoElement);
+    const promise = getVideo().play();
 
     if (promise !== undefined) {
-      promise.then(_ => {}).catch(error => {});
+      promise
+        .then(_ => {})
+        .catch(error => {
+          console.log(error);
+          setTimeout(() => getVideo().play(), 1500);
+        });
     }
   }
 
