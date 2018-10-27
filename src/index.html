@@ -17,7 +17,7 @@
 
   <!-- Initial loading spinner styles -->
   <style>
-    .loader,.loader::before{border:3px solid transparent}.loader-wrapper{height:100%;left:0;position:fixed;top:0;width:100%;z-index:1000}.loader{animation:spin 2s linear infinite;border-radius:50%;border-top-color:#3498db;display:block;height:150px;left:50%;margin:-75px 0 0 -75px;position:relative;top:50%;width:150px}.loader::after,.loader::before{content:"";position:absolute}.loader::before{animation:spin 3s linear infinite;border-radius:50%;border-top-color:#e74c3c;bottom:5px;left:5px;right:5px;top:5px}.loader::after{animation:spin 1.5s linear infinite;border:3px solid transparent;border-radius:50%;border-top-color:#f9c922;bottom:15px;left:15px;right:15px;top:15px}@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+    .logo{color:#2b2b2b;font-family:Montserrat,sans-serif;font-size:3.125rem;opacity:.8;position:absolute;text-align:center;top:calc(50% - 30px);width:100%;z-index:1000}.square{border:5px solid #2b2b2b;display:inline-block;filter:drop-shadow(5px 5px 4px #2b2b2b);height:1.75rem;width:1.75rem}
   </style>
 
   <script>
@@ -42,9 +42,10 @@
   <!--ga('send', 'pageview');-->
 <!--</script>-->
 
-<app-root>
-    <div class="loader-wrapper">
-      <div class="loader"></div>
+  <app-root>
+    <div class="logo fade-slide-in">
+      <span>JDM</span>
+      <span class="square"></span>
     </div>
   </app-root>
   <noscript>Please enable Javascript to continue using this application.</noscript>
