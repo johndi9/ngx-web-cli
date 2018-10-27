@@ -17,7 +17,7 @@ const mutateTemplate = () => fs.readdir(folderPath, (err, files) => {
   const scriptsString = files.map(fileName => {
     const [name, uuid, ext] = fileName.split('.');
     const fullName = `${name}.${uuid}`
-    if (['woff', 'woff2', 'ttf', 'eot'].includes(ext)) return getScriptFont({name: fullName, ext});
+    if (['woff', 'woff2', 'ttf'].includes(ext)) return getScriptFont({name: fullName, ext});
     if ('css' === ext) return getScriptCss({name: fullName});
   }).join('');
 
