@@ -19,6 +19,12 @@
   <style>
     .loader,.loader::before{border:3px solid transparent}.loader-wrapper{height:100%;left:0;position:fixed;top:0;width:100%;z-index:1000}.loader{animation:spin 2s linear infinite;border-radius:50%;border-top-color:#3498db;display:block;height:150px;left:50%;margin:-75px 0 0 -75px;position:relative;top:50%;width:150px}.loader::after,.loader::before{content:"";position:absolute}.loader::before{animation:spin 3s linear infinite;border-radius:50%;border-top-color:#e74c3c;bottom:5px;left:5px;right:5px;top:5px}.loader::after{animation:spin 1.5s linear infinite;border:3px solid transparent;border-radius:50%;border-top-color:#f9c922;bottom:15px;left:15px;right:15px;top:15px}@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
   </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(event) {
+      window.pageLoaded = true;
+    });
+  </script>
 </head>
 
 <body>

@@ -1,7 +1,10 @@
+@import 'utils';
+
 .cv-slider-wrapper ::ng-deep swiper > .swiper.s-wrapper .swiper-wrapper .swiper-slide {
   overflow: hidden;
 }
 
 .swiper-container {
   display: block;
+  min-height: $swiper-wrapper-min-height;
 }

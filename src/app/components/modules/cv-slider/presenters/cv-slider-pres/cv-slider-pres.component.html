@@ -1,37 +1,43 @@
 <div *ngIf="tabSelected" class="cv-slider-wrapper">
   <swiper [(index)]="tabSelected.id" (indexChange)="swipeTab($event)" class="swiper-container fade-slide-in delay350"
-          [style.height.px]="tabSelected?.height">
+          [style.height.px]="wrapperLoaded && tabSelected?.height > 50 && tabSelected?.height">
     <div class="swiper-slide">
       <div class="swiper-slide-inner pb-3">
-        <app-personal-cont [info]="cv?.content?.info" [skillSets]="cv?.content?.skills?.sets"
+        <app-personal-cont *ngIf="!tabSelected.id || wrapperLoaded"
+                           [info]="cv?.content?.info" [skillSets]="cv?.content?.skills?.sets"
                            [interests]="cv?.content?.interests" [aboutMe]="cv?.content?.aboutMe"></app-personal-cont>
       </div>
     </div>
     <div class="swiper-slide">
       <div class="swiper-slide-inner pb-3">
-        <app-projects-cont [projects]="cv?.content?.projects"
+        <app-projects-cont *ngIf="tabSelected.id === 1 || wrapperLoaded"
+                           [projects]="cv?.content?.projects"
                            [employs]="cv?.content?.employment?.history"></app-projects-cont>
       </div>
     </div>
     <div class="swiper-slide">
       <div class="swiper-slide-inner pb-3">
-        <app-employers-cont [employs]="cv?.content?.employment?.history"></app-employers-cont>
+        <app-employers-cont *ngIf="tabSelected.id === 2 || wrapperLoaded"
+                            [employs]="cv?.content?.employment?.history"></app-employers-cont>
       </div>
     </div>
     <div class="swiper-slide">
       <div class="swiper-slide-inner pb-3">
-        <app-education-cont [educations]="cv?.content?.education?.history" [certificates]="cv?.content?.certificates"
+        <app-education-cont *ngIf="tabSelected.id === 3 || wrapperLoaded"
+                            [educations]="cv?.content?.education?.history" [certificates]="cv?.content?.certificates"
                             [seminars]="cv?.content?.seminars" [languages]="cv?.content?.languages"></app-education-cont>
       </div>
     </div>
     <div class="swiper-slide">
       <div class="swiper-slide-inner pb-3">
-        <app-other-info-cont [writings]="cv?.content?.writing" [speakings]="cv?.content?.speaking"></app-other-info-cont>
+        <app-other-info-cont *ngIf="tabSelected.id === 4 || wrapperLoaded"
+                             [writings]="cv?.content?.writing" [speakings]="cv?.content?.speaking"></app-other-info-cont>
       </div>
     </div>
     <div class="swiper-slide">
       <div class="swiper-slide-inner pb-3">
-        <app-contact-cont [contact]="cv?.content?.contact" [location]="cv?.content?.location"
+        <app-contact-cont *ngIf="tabSelected.id === 5 || wrapperLoaded"
+                          [contact]="cv?.content?.contact" [location]="cv?.content?.location"
                           [social]="cv?.content?.social"></app-contact-cont>
       </div>
     </div>

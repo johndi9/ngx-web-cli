@@ -15,7 +15,10 @@ export class CvSliderPresComponent {
   @Input() cv: XhrStateInt<CurriculumInt>;
   @Input() tabSelected: TabStateInt<TAB_OPTIONS>;
 
+  wrapperLoaded = false;
+
   swipeTab(tab: TAB_OPTIONS) {
+    this.wrapperLoaded = (<any>window).pageLoaded;
     this.onTabSelected.emit(tab);
   }
 }
