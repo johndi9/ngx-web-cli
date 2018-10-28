@@ -48,6 +48,10 @@ export class ImageComponent implements OnInit, OnChanges {
       this.hasBlurEffect = false;
       this.changeDetector.markForCheck();
     };
+    downloadingImage.onerror = () => {
+      this.loadImageWithFormat(src);
+      return;
+    };
   }
 
   private getDefaultNoImage(noImage: ImageInt): ImageInt {
