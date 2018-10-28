@@ -1,0 +1,19 @@
+@import 'utils';
+
+// Common styles
+html, body {
+  color: $color-base;
+  font-family: $font-family-root;
+  font-size: $font-size-root;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.ngx-dialog .mat-dialog-container {
+  padding: 0;
+}

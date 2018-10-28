@@ -1,0 +1,46 @@
+// Common variables
+$font-size-root: 16px;
+$font-family-root: 'Roboto-Light', sans-serif;
+$font-family-quote: 'Roboto Mono', Roboto, sans-serif;
+
+// Resize utility variables
+$mat-xsmall-down: 'max-width: 600px';
+$mat-small-down: 'max-width: 960px';
+$mat-medium-down: 'max-width: 1280px';
+$mat-large-down: 'max-width: 1960px';
+$mat-xsmall-up: 'min-width: 600px';
+$mat-small-up: 'min-width: 960px';
+$mat-medium-up: 'min-width: 1280px';
+$mat-large-up: 'min-width: 1960px';
+
+// Delay classes
+$total-delays: 50;
+$interval-delay: 25;
+
+// Header
+$header-height-overflow-xs-down: 50px;
+$header-height-xs-down: 130px;
+$header-height-xs-up: 90px;
+
+// Page
+$page-max-width: 1400px;
+
+// Swiper Wrapper
+$swiper-wrapper-min-height: 1000px;
+
+// Header video
+$video-bg-height: 100vh;
+$video-bg-height-sm: calc(100vh - #{2*$header-height-overflow-xs-down});
+
+// Profile picture
+$profile-pic-size: 90px !default;
+$profile-pic-size-small: 40px !default;
+$profile-pic-overflow-y: 45px !default;
+
+// Company logos
+$logo-size: 70px;
+
+// Fab button position
+$fab-btn-bottom: 25px;
+$fab-btn-right: 25px;
+$fab-btn-right-xs: 10px;

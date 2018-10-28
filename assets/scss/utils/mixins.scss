@@ -1,0 +1,138 @@
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@mixin sub-heading-styles {
+  .sub-heading-styles {
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+}
+
+@mixin shared-common-styles {
+  .block {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    margin-bottom: 4rem;
+    padding: 0 1rem;
+  }
+
+  .sub-block {
+    margin-bottom: rem(10);
+    padding: 0 1rem;
+  }
+
+  .highlight {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+}
+
+@mixin expand-dialog-section {
+  margin-left: -24px;
+  margin-right: -24px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@mixin dialog-structure {
+  .dialog-wrapper {
+    height: 100vh;
+  }
+
+  .dialog-header {
+    border-bottom: 1px solid $gray-lighter;
+    padding: 24px;
+  }
+
+  .dialog-subtitle {
+    @include expand-dialog-section;
+    border-bottom: 1px solid $gray-lighter;
+    padding-bottom: 20px;
+  }
+
+  .dialog-body {
+    flex: 1;
+    padding: 0 24px;
+    overflow-y: auto;
+  }
+
+  .block {
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  ul {
+    padding-left: 2rem;
+  }
+
+  .mat-icon-button {
+    text-align: right;
+
+    .mat-icon {
+      font-size: 2.2rem;
+      height: auto;
+      width: auto;
+    }
+  }
+}
+
+@mixin skills-structure {
+  .chip-wrapper {
+    padding: 0 20px;
+  }
+
+  .skill-title {
+    margin-bottom: 1.4rem;
+    width: 100%;
+
+    .mat-icon {
+      @extend %list-icon-style;
+    }
+
+    .mat-icon,
+    span {
+      vertical-align: middle;
+    }
+  }
+
+  .skill-container {
+    margin-bottom: 1.8rem;
+    width: 100%;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@mixin profile-pic($size) {
+  @include mat-elevation(2);
+  border-radius: 5px;
+  height: $size;
+  margin-top: -$profile-pic-overflow-y;
+  width: $size;
+
+  @media ($mat-small-down) {
+    border-radius: 50%;
+    height: $profile-pic-size-small;
+    margin-top: 0;
+    width: $profile-pic-size-small;
+  }
+}
