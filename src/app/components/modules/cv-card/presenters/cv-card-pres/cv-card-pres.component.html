@@ -1,10 +1,8 @@
-<div class="card-container p-2" (deferLoad)="showMyElement = true">
+<div class="card-container p-2">
   <mat-card (click)="openModal(id)" class="pt-0">
     <mat-card-header class="align-items-center py-3">
       <div mat-card-avatar>
-        <ng-container *ngIf="showMyElement">
-          <app-image *ngIf="thumbImg; else noImg" [image]="getImage({img: thumbImg, cssClass: 'card-pic'})"></app-image>
-        </ng-container>
+        <app-image *ngIf="thumbImg; else noImg" [image]="getImage({img: thumbImg, cssClass: 'card-pic'})"></app-image>
         <ng-template #noImg><mat-icon class="no-logo-icon">business</mat-icon></ng-template>
       </div>
       <div class="mat-card-header-text"><mat-card-title>{{title}}</mat-card-title></div>
