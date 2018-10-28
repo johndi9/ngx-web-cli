@@ -27,7 +27,7 @@ export class StickySidebarSmallPresComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     if (changes[ 'tabSelected' ] && changes[ 'tabSelected' ].currentValue && changes[ 'tabSelected' ].previousValue &&
       changes[ 'tabSelected' ].currentValue.height !== changes[ 'tabSelected' ].previousValue.height) {
-      this.height = this.tabSelected.height;
+      this.height = this.tabSelected.height > 50 && this.tabSelected.height;
     }
   }
 

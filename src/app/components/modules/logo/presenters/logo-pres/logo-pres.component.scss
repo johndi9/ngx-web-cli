@@ -6,8 +6,7 @@
   font-size: rem(50);
   opacity: .8;
   position: absolute;
-  text-align: center;
-  top: calc(50% - 30px);
+  top: calc(50% - 80px);
   width: 100%;
   z-index: 1000;
 }
@@ -17,5 +16,6 @@
   display: inline-block;
   filter: drop-shadow(5px 5px 4px $logo-color);
   height: rem(28);
+  margin-left: 5px;
   width: rem(28);
 }

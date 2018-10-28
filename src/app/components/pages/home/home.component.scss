@@ -2,6 +2,10 @@
 
 .dynamic-header-container {
   height: $video-bg-height;
+
+  @media ($mat-small-down) {
+    height: $video-bg-height-sm;
+  }
 }
 
 .main-wrapper {

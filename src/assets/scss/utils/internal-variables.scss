@@ -30,6 +30,7 @@ $swiper-wrapper-min-height: 1000px;
 
 // Header video
 $video-bg-height: 100vh;
+$video-bg-height-sm: calc(100vh - #{2*$header-height-overflow-xs-down});
 
 // Profile picture
 $profile-pic-size: 90px !default;
