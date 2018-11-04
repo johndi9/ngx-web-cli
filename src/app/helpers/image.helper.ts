@@ -1,6 +1,6 @@
 import { ImageInt, ImageUrlInt } from '../interfaces/image/image.int';
 
-export const getImage = ({ img, cssClass }: { img: ImageUrlInt, cssClass: {} }) =>
+export const getImage = ({ img, cssClass }: { img: ImageUrlInt, cssClass?: {} }) =>
   ({
     src: {
       large: {

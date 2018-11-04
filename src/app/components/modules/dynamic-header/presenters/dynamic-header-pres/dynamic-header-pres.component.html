@@ -2,8 +2,11 @@
   <app-logo-pres></app-logo-pres>
 
   <div class="video-wrapper">
-    <video id="vid" muted autoplay loop preload="true">
+    <video *ngIf="showVideo; else showImg" id="vid" muted="true" autoplay loop preload="true">
       <source src="{{videoPath}}" type="video/mp4"/>
     </video>
+    <ng-template #showImg>
+      <app-image [image]="getImage({img: {path: 'cover/cover', format: 'png'}, cssClass: 'default-img'})"></app-image>
+    </ng-template>
   </div>
 </div>

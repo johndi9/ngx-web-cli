@@ -1,4 +1,6 @@
 import { AfterContentInit, ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { isMobile } from '../../../../../helpers/device.helper';
+import { getImage } from '../../../../../helpers/image.helper';
 
 @Component({
   selector: 'app-dynamic-header-pres',
@@ -9,20 +11,20 @@ import { AfterContentInit, ChangeDetectionStrategy, Component, Input } from '@an
 export class DynamicHeaderPresComponent implements AfterContentInit {
   @Input() videoPath: string;
 
-  constructor() { }
+  showVideo: boolean;
+  getImage = getImage;
 
-  ngAfterContentInit() {
-    const playVideo = () => (document.getElementById('vid') as HTMLVideoElement).play();
-    try {
-      const promise = playVideo();
+  constructor() {
+    this.showVideo = !isMobile();
+  }
 
-      if (promise !== undefined) {
-        promise
-          .then(() => setTimeout(() => playVideo(), 5000))
-          .catch(() => setTimeout(() => playVideo(), 5000));
+  async ngAfterContentInit() {
+    if (this.showVideo) {
+      const videoElem = document.getElementById('vid') as HTMLVideoElement;
+      await videoElem.play();
+      if (videoElem.paused) {
+        this.showVideo = false;
       }
-    } catch (e) {
-      setTimeout(() => playVideo(), 5000);
     }
   }
 

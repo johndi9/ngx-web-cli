@@ -22,7 +22,8 @@
   }
 }
 
-video {
+video,
+::ng-deep .default-img {
   height: $video-bg-height;
   object-fit: cover;
   width: 100vw;
